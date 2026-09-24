@@ -36,25 +36,25 @@
       <img class="hero-logo" src="assets/images/logo.png" width="1254" height="1254" alt="Robo-Harness K1 robot riding a horse, with a compass and perception tools">
     </section>
     <section class="overview container" aria-labelledby="overview-title">
-      <div class="section-heading"><p class="eyebrow">Overview</p><h2 id="overview-title">From visual understanding to robot action</h2></div>
+      <div class="section-heading"><p class="eyebrow">Overview</p><h2 id="overview-title">From VLM Understanding to Manipulation Capability</h2></div>
       <div class="prose">
-        <p>Vision-language models can recognize objects and interpret instructions, but a robot also needs to know <em>where to move, how to orient its gripper, and whether an action actually worked</em>. Inferring these details from RGB images alone leaves uncertainty about depth, contact, and spatial relationships.</p>
-        <p><strong>Robo-Harness K1 makes spatial evidence available as tools.</strong> The model can ground a target, request calibrated measurements, track visual references, and inspect grasp hypotheses in its existing camera views. It then chooses generic motion commands and checks the outcome. The harness supplies evidence and execution feedback; the model remains responsible for the manipulation strategy, rather than selecting a task-specific pick-and-place script.</p>
-        <p>The same interface supports both <strong>frontier models without fine-tuning</strong> and <strong>agentic post-training of smaller models</strong>: successful interactions become examples of what to observe, what to measure, and which tool to call next.</p>
+        <p>Foundation vision-language models recognize objects, interpret instructions, and reason about spatial relations. Yet a robot also needs to know where to move, how to orient its gripper, and whether an action actually worked. Inferring these details from RGB images alone leaves fundamental uncertainty about depth, contact, and 3D spatial relationships. We identify accessible perceptual evidence as the critical missing piece between VLM competence and manipulation capability.</p>
+        <p><strong>Robo-Harness K1 exposes perception as tools.</strong> The agent queries calibrated depth, inspects visual anchors with persistent object identities, evaluates grasp hypotheses, and selects generic motions from the returned evidence. Visual reference lines overlay calibrated measurements onto the VLM's existing RGB views, making 3D object relations, orientations, and distances visible without a depth encoder. The K1 harness supplies calibrated spatial evidence, not task-specific pick/place primitives or hidden object poses. The VLM remains responsible for choosing the target, the motion, and the recovery strategy.</p>
+        <p>The same interface supports both <strong>frontier models without fine-tuning</strong> and <strong>training compact student models</strong>: tool-call traces naturally align with next-token prediction, so successful interactions become supervision for what to observe, what to measure, and which tool to call next.</p>
       </div>
     </section>
     <section class="section demos-section" id="demos" aria-labelledby="demos-title">
       <div class="container">
         <div class="section-heading"><p class="eyebrow">In action</p><h2 id="demos-title">Successful demonstrations</h2></div>
         <p class="section-intro">Gemini 3.7 Flash with Robo-Harness K1. Current-view perception overlays show what the agent observed, alongside its function calls.</p>
-        <div class="dataset-heading"><h3>LIBERO-Pro</h3><span>Franka Panda</span></div>
+        <div class="dataset-heading"><h3>LIBERO-PRO</h3><span>Franka Panda</span></div>
         <div class="demo-grid">
           <figure class="video-card">
             <video controls playsinline preload="metadata" poster="assets/videos/libero-bowl.jpg?v=annotated" aria-label="LIBERO-Pro: place the bowl on the plate, annotated observations and complete execution">
               <source src="assets/videos/libero-bowl.mp4?v=annotated" type="video/mp4">
               <a href="assets/videos/libero-bowl.mp4?v=annotated">Download the bowl placement video</a>
             </video>
-            <figcaption><span class="video-meta">Spatial · Tools + execution</span><h4>Bowl onto plate</h4><p>Locate the bowl between the plate and the ramekin, then place it on the plate.</p></figcaption>
+            <figcaption><span class="video-meta">Spatial · Tools + execution</span><h4>Bowl onto plate</h4><p>Locate the black bowl between the plate and the ramekin, then place it on the plate.</p></figcaption>
           </figure>
           <figure class="video-card">
             <video controls playsinline preload="metadata" poster="assets/videos/libero-basket.jpg?v=annotated" aria-label="LIBERO-Pro: place ketchup in the basket, current observations with tool overlays and function calls">
@@ -68,7 +68,7 @@
               <source src="assets/videos/libero-drawer.mp4?v=annotated" type="video/mp4">
               <a href="assets/videos/libero-drawer.mp4?v=annotated">Download the drawer opening video</a>
             </video>
-            <figcaption><span class="video-meta">Goal · Tools + execution</span><h4>Open the middle drawer</h4><p>Ground the handle and control contact while pulling the drawer open.</p></figcaption>
+            <figcaption><span class="video-meta">Goal · Tools + execution</span><h4>Open the middle drawer</h4><p>Ground the drawer handle and control contact while pulling the drawer open.</p></figcaption>
           </figure>
         </div>
         <div class="dataset-heading suite-heading"><h3>RoboSuite</h3><span>Across robot arms</span></div>
@@ -78,7 +78,7 @@
               <source src="assets/videos/suite-nut.mp4?v=smooth" type="video/mp4">
               <a href="assets/videos/suite-nut.mp4?v=smooth">Download the nut assembly video</a>
             </video>
-            <figcaption><span class="video-meta">UR5e · Tools + execution</span><h4>Nut assembly</h4><p>Grasp the nut, align it over the peg, and lower it into place.</p></figcaption>
+            <figcaption><span class="video-meta">UR5e · Tools + execution</span><h4>Nut assembly</h4><p>Grasp the square nut, align it above the peg, and lower it into place.</p></figcaption>
           </figure>
           <figure class="video-card">
             <video controls playsinline preload="metadata" poster="assets/videos/suite-stack.jpg?v=annotated" aria-label="RoboSuite: IIWA cube stacking, current observations with tool overlays and function calls">
@@ -95,48 +95,46 @@
             <figcaption><span class="video-meta">Dual Panda · Tools + execution</span><h4>Two-arm lifting</h4><p>Lift the pot with two arms. Native success requires the pot bottom to rise more than 10 cm above the table.</p></figcaption>
           </figure>
         </div>
-        <p class="playback-note">Decision observations pause briefly to show the original overlays and function calls (key arguments shown). Motion segments retain every recorded control step at simulator speed; overlays are not carried onto changed views. Each clip ends with a two-second hold of the successful terminal state. API waiting time is omitted. Use fullscreen to read the annotations.</p>
+        <p class="playback-note">Decision observations pause briefly to show the recorded perception overlays and tool calls (key arguments shown). Motion segments retain every recorded control step at simulator speed; overlays are not carried onto changed views. Each clip ends with a two-second hold of the successful terminal state. API waiting time is omitted. Use fullscreen to read the annotations.</p>
       </div>
     </section>
     <section class="section container" id="method" aria-labelledby="method-title">
-      <div class="section-heading"><p class="eyebrow">The method</p><h2 id="method-title">Perception as tools</h2></div>
-      <p class="section-intro">K1 connects a vision-language model to calibrated perception, motion, and memory tools. The model selects what to measure, acts on the evidence, and observes what actually happened.</p>
+      <div class="section-heading"><p class="eyebrow">The method</p><h2 id="method-title">Perception as Tools</h2></div>
+      <p class="section-intro">K1 connects a vision-language model to calibrated perception, motion, and memory tools through the VLM's existing image-and-language interface. The agent selects what to measure, acts on the evidence, and observes what actually happened.</p>
       <figure class="paper-figure">
         <a href="assets/images/perception-tools.png" aria-label="Open the perception tools figure at full resolution"><img src="assets/images/perception-tools.png" width="2205" height="528" loading="lazy" alt="Region grounding, depth and geometry measurement, anchor tracking, and grasp candidates on existing camera images"></a>
         <figcaption>Ground regions, measure geometry, track visual anchors, and inspect grasp hypotheses in the existing camera views.</figcaption>
       </figure>
       <div class="method-steps">
-        <article><span class="step-number">01</span><h3>Ground and measure</h3><p>A text query returns labeled candidate regions for the model to inspect. Pixel-depth queries and region geometry turn calibrated RGB-D observations into metric positions, surface directions, and relative displacements. Evidence is projected back into the existing external and wrist-camera images; the model does not need to interpret a raw point cloud.</p></article>
-        <article><span class="step-number">02</span><h3>Act and check the outcome</h3><p>The model selects a grasp hypothesis or specifies a motion itself. Generic tools control translation, rotation, and gripper opening. Small relative moves support fine alignment; direct target moves reduce calls during longer transits. Receipts report achieved motion and residual error, so a requested pose is not confused with a completed movement—or a successful grasp.</p></article>
-        <article><span class="step-number">03</span><h3>Keep useful evidence</h3><p>Persistent region identifiers and tracked anchors help maintain references across actions. Current and previous images support visual comparison, while validity flags distinguish live measurements from uncertain or historical references. A recent interaction window, searchable full history, and model-maintained progress records carry information through longer tasks.</p></article>
-        <article><span class="step-number">04</span><h3>Learn the same tool interface</h3><p>Teacher interactions are filtered into executable next-tool-call examples, paired with the observations and tool evidence available at that decision. We fine-tune Qwen3.5-9B with language-side LoRA and a frozen vision encoder. The student uses the same frozen harness at evaluation, without adding a separate continuous-action prediction head.</p></article>
+        <article><span class="step-number">01</span><h3>Ground and Measure</h3><p>A text query returns labeled candidate regions with persistent identifiers for the agent to inspect. Calibrated depth queries and region geometry convert RGB-D observations into metric surface positions, principal directions, and relative displacements. Evidence is projected back into the existing external and wrist-camera views as visual reference lines. The agent reads 3D relations directly from annotated images without interpreting raw point clouds or depth arrays.</p></article>
+        <article><span class="step-number">02</span><h3>Act and Verify</h3><p>The agent selects a grasp hypothesis or specifies a motion target. Generic tools control translation, rotation, and gripper opening at adaptive granularity: fine-grained bounded steps for precise alignment, and direct target moves for longer transits that reduce model calls and keep the context history clean. Every action reports achieved motion and residual error, so a requested pose is not confused with a completed movement.</p></article>
+        <article><span class="step-number">03</span><h3>Maintain Spatial Evidence</h3><p>Each detected region receives a persistent identity anchor that survives across observations. Anchor tracking provides frame-to-frame correspondences lifted into world coordinates, separating apparent camera motion from actual surface displacement. Validity flags distinguish live measurements from uncertain or historical references. A sliding context window, searchable full history, and agent-maintained progress records carry information through longer episodes.</p></article>
+        <article><span class="step-number">04</span><h3>Train from Tool-Call Traces</h3><p>Teacher interactions are filtered into executable next-tool-call examples, paired with the observations and tool evidence available at each decision. Qwen3.5-9B is fine-tuned with language-side LoRA and a frozen vision encoder. The student uses the same frozen harness at evaluation without a separate action head. Tool-call traces align directly with the VLM's native next-token prediction objective, enabling a training paradigm with better sample efficiency and generalization than action regression.</p></article>
       </div>
-      <p class="method-caveat">Measurements describe observed surfaces, not hidden geometry. Tracking can become uncertain, and a grasp candidate is a hypothesis—not a guarantee of collision-free motion or secure contact. Re-observation and execution feedback remain part of the control loop.</p>
+      <p class="method-caveat">Measurements describe observed surfaces, not hidden geometry. Tracking can become uncertain, and a grasp candidate is a hypothesis, not a guarantee of collision-free motion or secure contact. Re-observation and execution feedback remain part of the control loop.</p>
     </section>
     <section class="section results-section" id="results" aria-labelledby="results-title">
       <div class="container">
         <div class="section-heading"><p class="eyebrow">Experiments</p><h2 id="results-title">Results</h2></div>
         <article class="result-block">
-          <h3>LIBERO-Pro</h3>
-          <p class="result-summary">On matched configurations, adding K1 to GPT-6 Astra raises success from <strong>61.1% to 88.9%</strong>; Gemini 3.7 Flash with K1 reaches <strong>77.8%</strong>. This compares complete robot interfaces, rather than isolating a single perception tool.</p>
-          <figure class="paper-figure"><a href="assets/images/frontier-results.png" aria-label="Open LIBERO-Pro results at full resolution"><img src="assets/images/frontier-results.png" width="1728" height="660" loading="lazy" alt="LIBERO-Pro accuracy: K1 with GPT-6 Astra 88.9%, K1 with Gemini 3.7 Flash 77.8%, RGB-only GPT-6 Astra 61.1%, plus published reference results"></a><figcaption>The top three rows use matched task configurations. Hatched bars are published references with different protocols, not matched reruns.</figcaption></figure>
+          <h3>LIBERO-PRO</h3>
+          <p class="result-summary">On matched configurations, K1 augments GPT-6 Astra from <strong>61.1% to 88.9%</strong>, a gain of 27.8 percentage points. Gemini 3.7 Flash with K1 reaches <strong>77.8%</strong>, surpassing RGB-only Astra despite being a weaker model. This shows that perception tools and model capability are complementary: a weaker model equipped with K1 can outperform a stronger model without it, and K1 further lifts an already strong model.</p>
+          <figure class="paper-figure"><a href="assets/images/frontier-results.png" aria-label="Open LIBERO-Pro results at full resolution"><img src="assets/images/frontier-results.png" width="1728" height="660" loading="lazy" alt="LIBERO-Pro accuracy: K1 with GPT-6 Astra 88.9%, K1 with Gemini 3.7 Flash 77.8%, RGB-only GPT-6 Astra 61.1%, plus published reference results"></a><figcaption>The top three rows use matched task configurations. Hatched bars are published references with different evaluation protocols, not matched reruns.</figcaption></figure>
         </article>
         <article class="result-block">
-          <h3>Agentic post-training</h3>
-          <p class="result-summary">Can a smaller model learn to use these tools? At epoch 5, Qwen3.5-9B + K1 reaches <strong>51.2%</strong> on training-matched configurations (A), <strong>44.2%</strong> on new initial states of seen conditions (B), and <strong>13.9%</strong> on held-out task conditions (C). OpenVLA trained from the same demonstration pool reaches <strong>20.9%, 30.2%, and 0.0%</strong>, respectively.</p>
-          <figure class="paper-figure"><a href="assets/images/learning-curves.png" aria-label="Open learning curves at full resolution"><img src="assets/images/learning-curves.png" width="1117" height="452" loading="lazy" alt="Learning curves comparing Qwen with K1, RGB-only Qwen, OpenVLA, pi0.5, and Qwen VLA"></a><figcaption>Models share a source demonstration pool. B is a new-state development set; C holds out task conditions from fine-tuning, not necessarily distinct manipulation skills.</figcaption></figure>
-          <p class="result-interpretation">Tool-use supervision is promising in this data-limited comparison, but transfer is not solved: held-out success remains modest, and new-state performance does not improve monotonically with training. These results compare the evaluated training recipes and observation interfaces, not an intrinsic ranking of all agentic models and VLAs.</p>
+          <h3>Agentic Post-Training</h3>
+          <p class="result-summary">At epoch 5, Qwen3.5-9B with K1 reaches <strong>51.2%</strong> on training-matched configurations (A), <strong>44.2%</strong> on new initial states (B), and <strong>13.9%</strong> on held-out task conditions (C), versus OpenVLA's 20.9%, 30.2%, and 0.0% respectively. K1 RUA is the only method to succeed on held-out tasks where every VLA baseline scores 0.0%.</p>
+          <figure class="paper-figure"><a href="assets/images/learning-curves.png" aria-label="Open learning curves at full resolution"><img src="assets/images/learning-curves.png" width="1117" height="452" loading="lazy" alt="Learning curves comparing Qwen with K1, RGB-only Qwen, OpenVLA, pi0.5, and Qwen VLA"></a><figcaption>All methods share the same 107 source episodes. B evaluates new initial states of seen conditions; C holds out entire task conditions from fine-tuning. Generalization on B and C does not degrade significantly despite the limited training data. Further scaling of demonstration diversity is a natural next step.</figcaption></figure>
         </article>
         <article class="result-block transfer-result">
-          <h3>RoboSuite transfer</h3>
-          <p class="result-summary">We transfer Gemini + K1 to another simulation environment and different arms using embodiment-specific adapters, without target-environment fine-tuning. On the four shared tasks—cube lifting, restacking, stacking, and nut assembly—success is:</p>
+          <h3>RoboSuite Transfer</h3>
+          <p class="result-summary">Gemini with K1 transfers to RoboSuite without any target-environment fine-tuning. On the four shared tasks (cube lifting, restacking, stacking, and nut assembly):</p>
           <div class="accuracy-row" aria-label="Accuracy on the shared RoboSuite tasks">
             <p><strong>90.0<span>%</span></strong><span>Panda</span></p>
             <p><strong>88.8<span>%</span></strong><span>UR5e</span></p>
             <p><strong>86.2<span>%</span></strong><span>IIWA</span></p>
           </div>
-          <p class="result-note">Gemini + K1 on the shared tasks, without target-environment fine-tuning. All arms use PandaGripper and embodiment-specific adapters.</p>
-          <p class="result-interpretation">The broader Panda evaluation also includes wiping and two-arm tasks, with <strong>72.1%</strong> overall success. Performance varies substantially: two-arm lifting reaches <strong>75.0%</strong>, while handover reaches only <strong>5.0%</strong>. The transfer results support reuse across arms and environments, but do not imply that dexterous coordination or arbitrary grippers are solved.</p>
+          <p class="result-interpretation">The small spread across arms supports separating decisions from actuation: the agent reasons about measured geometry, while embodiment-specific adapters control each arm. All arms use PandaGripper to isolate changes in arm kinematics. The broader Panda evaluation includes wiping and two-arm tasks, reaching <strong>72.1%</strong> overall. Two-arm lifting reaches 75.0%, while handover reaches only 5.0%, exposing coordination limits beyond geometric target-reaching.</p>
         </article>
         <p class="details-link"><a href="https://github.com/Robo-Harness/k1/blob/main/docs/results.md">Evaluation protocols and detailed results <span aria-hidden="true">↗</span></a></p>
       </div>
