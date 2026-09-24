@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Robo-Harness K1: Harnessing Robot-Use Agents via Perception Augmentation. Methods, experimental results, and robot demonstrations.">
+  <meta name="theme-color" content="#165bcc">
+  <title>Robo-Harness K1</title>
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#main">Robo-Harness <span>K1</span></a>
+      <div class="nav-links">
+        <a href="#demos">Demos</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="https://github.com/Robo-Harness/k1">Code <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero container" aria-labelledby="project-title">
+      <div class="hero-copy">
+        <h1 id="project-title">Robo-Harness <span>K1</span></h1>
+        <p class="paper-title">Harnessing Robot-Use Agents<br class="desktop-break"> via Perception Augmentation</p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://github.com/Robo-Harness/k1">View code <span aria-hidden="true">↗</span></a>
+          <a class="button secondary" href="#demos">Watch demonstrations</a>
+        </div>
+      </div>
+      <img class="hero-logo" src="assets/images/logo.png" width="1254" height="1254" alt="Robo-Harness K1 robot riding a horse, with a compass and perception tools">
+    </section>
+    <section class="section demos-section" id="demos" aria-labelledby="demos-title">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">In action</p><h2 id="demos-title">Successful demonstrations</h2></div>
+        <p class="section-intro">Gemini 3.7 Flash with Robo-Harness K1. Selected successes, verified by native simulator replay. Videos show only current camera observations—never historical views.</p>
+        <div class="dataset-heading"><h3>LIBERO-Pro</h3><span>Franka Panda</span></div>
+        <div class="demo-grid">
+          <figure class="video-card">
+            <video controls playsinline preload="metadata" poster="assets/videos/libero-bowl.jpg" aria-label="LIBERO-Pro: place the bowl on the plate, current camera views with perception overlays">
+              <source src="assets/videos/libero-bowl.mp4" type="video/mp4">
+              <a href="assets/videos/libero-bowl.mp4">Download the bowl placement video</a>
+            </video>
+            <figcaption><span class="video-meta">Spatial · Tool overlays</span><h4>Bowl onto plate</h4><p>Locate the bowl between the plate and the ramekin, then place it on the plate.</p></figcaption>
+          </figure>
+          <figure class="video-card">
+            <video controls playsinline preload="metadata" poster="assets/videos/libero-basket.jpg" aria-label="LIBERO-Pro: place ketchup in the basket, clean current RGB camera views">
+              <source src="assets/videos/libero-basket.mp4" type="video/mp4">
+              <a href="assets/videos/libero-basket.mp4">Download the basket placement video</a>
+            </video>
+            <figcaption><span class="video-meta">Object · Clean RGB</span><h4>Ketchup into basket</h4><p>Pick the target object and transfer it into the basket.</p></figcaption>
+          </figure>
+          <figure class="video-card">
+            <video controls playsinline preload="metadata" poster="assets/videos/libero-drawer.jpg" aria-label="LIBERO-Pro: open the middle drawer, current camera views with perception overlays">
+              <source src="assets/videos/libero-drawer.mp4" type="video/mp4">
+              <a href="assets/videos/libero-drawer.mp4">Download the drawer opening video</a>
+            </video>
+            <figcaption><span class="video-meta">Goal · Tool overlays</span><h4>Open the middle drawer</h4><p>Ground the handle and control contact while pulling the drawer open.</p></figcaption>
+          </figure>
+        </div>
+        <div class="dataset-heading suite-heading"><h3>RoboSuite</h3><span>Across robot arms</span></div>
+        <div class="demo-grid">
+          <figure class="video-card">
+            <video controls playsinline preload="metadata" poster="assets/videos/suite-nut.jpg" aria-label="RoboSuite: UR5e nut assembly, current camera views with perception overlays">
+              <source src="assets/videos/suite-nut.mp4" type="video/mp4">
+              <a href="assets/videos/suite-nut.mp4">Download the nut assembly video</a>
+            </video>
+            <figcaption><span class="video-meta">UR5e · Tool overlays</span><h4>Nut assembly</h4><p>Grasp the nut, align it over the peg, and lower it into place.</p></figcaption>
+          </figure>
+          <figure class="video-card">
+            <video controls playsinline preload="metadata" poster="assets/videos/suite-stack.jpg" aria-label="RoboSuite: IIWA cube stacking, clean current RGB camera views">
+              <source src="assets/videos/suite-stack.mp4" type="video/mp4">
+              <a href="assets/videos/suite-stack.mp4">Download the cube stacking video</a>
+            </video>
+            <figcaption><span class="video-meta">IIWA · Clean RGB</span><h4>Cube stacking</h4><p>Pick up a cube and stack it on the other cube.</p></figcaption>
+          </figure>
+          <figure class="video-card">
+            <video controls playsinline preload="metadata" poster="assets/videos/suite-two-arm.jpg" aria-label="RoboSuite: two Panda arms lifting together, current scene and both wrist camera views">
+              <source src="assets/videos/suite-two-arm.mp4" type="video/mp4">
+              <a href="assets/videos/suite-two-arm.mp4">Download the two-arm lifting video</a>
+            </video>
+            <figcaption><span class="video-meta">Dual Panda · Tool overlays</span><h4>Two-arm lifting</h4><p>Coordinate both grippers to grasp and lift the pot.</p></figcaption>
+          </figure>
+        </div>
+        <p class="playback-note">Sampled playback from archived decision-time observations, not continuous or real-time footage. Clean RGB uses the same current sensor frames without overlays. The terminal simulator state can follow the last model observation; success is checked independently. Use fullscreen to inspect the views.</p>
+      </div>
+    </section>
+    <section class="section container" id="method" aria-labelledby="method-title">
+      <div class="section-heading"><p class="eyebrow">The method</p><h2 id="method-title">Perception as tools</h2></div>
+      <p class="section-intro">K1 connects a vision-language model to calibrated perception, motion, and memory tools. The model selects what to measure, acts on the evidence, and observes what actually happened.</p>
+      <figure class="paper-figure">
+        <a href="assets/images/perception-tools.png" aria-label="Open the perception tools figure at full resolution"><img src="assets/images/perception-tools.png" width="2205" height="528" loading="lazy" alt="Region grounding, depth and geometry measurement, anchor tracking, and grasp candidates on existing camera images"></a>
+        <figcaption>Ground regions, measure geometry, track visual anchors, and inspect grasp hypotheses in the existing camera views.</figcaption>
+      </figure>
+    </section>
+    <section class="section results-section" id="results" aria-labelledby="results-title">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Experiments</p><h2 id="results-title">Results</h2></div>
+        <article class="result-block">
+          <h3>LIBERO-Pro</h3>
+          <figure class="paper-figure"><a href="assets/images/frontier-results.png" aria-label="Open LIBERO-Pro results at full resolution"><img src="assets/images/frontier-results.png" width="1728" height="660" loading="lazy" alt="LIBERO-Pro accuracy: K1 with GPT-6 Astra 88.9%, K1 with Gemini 3.7 Flash 77.8%, RGB-only GPT-6 Astra 61.1%, plus published reference results"></a><figcaption>The top three rows use matched task configurations. Hatched bars are published references with different protocols, not matched reruns. Gemini + K1 reaches 77.2% on the full evaluation.</figcaption></figure>
+        </article>
+        <article class="result-block">
+          <h3>Agentic post-training</h3>
+          <figure class="paper-figure"><a href="assets/images/learning-curves.png" aria-label="Open learning curves at full resolution"><img src="assets/images/learning-curves.png" width="1117" height="452" loading="lazy" alt="Learning curves comparing Qwen with K1, RGB-only Qwen, OpenVLA, pi0.5, and Qwen VLA"></a><figcaption>Models share a source demonstration pool. B is a new-state development set; C holds out task conditions from fine-tuning, not necessarily distinct manipulation skills.</figcaption></figure>
+        </article>
+        <article class="result-block transfer-result">
+          <h3>RoboSuite transfer</h3>
+          <div class="accuracy-row" aria-label="Accuracy on the shared RoboSuite tasks">
+            <p><strong>90.0<span>%</span></strong><span>Panda</span></p>
+            <p><strong>88.8<span>%</span></strong><span>UR5e</span></p>
+            <p><strong>86.2<span>%</span></strong><span>IIWA</span></p>
+          </div>
+          <p class="result-note">Gemini + K1 on the shared tasks, without target-environment fine-tuning. All arms use PandaGripper and embodiment-specific adapters.</p>
+        </article>
+        <p class="details-link"><a href="https://github.com/Robo-Harness/k1/blob/main/docs/results.md">Evaluation protocols and detailed results <span aria-hidden="true">↗</span></a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer container"><span>Robo-Harness K1</span><a href="https://github.com/Robo-Harness/k1">Code & documentation <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>
