@@ -35,59 +35,67 @@
       </div>
       <img class="hero-logo" src="assets/images/logo.png" width="1254" height="1254" alt="Robo-Harness K1 robot riding a horse, with a compass and perception tools">
     </section>
+    <section class="overview container" aria-labelledby="overview-title">
+      <div class="section-heading"><p class="eyebrow">Overview</p><h2 id="overview-title">From visual understanding to robot action</h2></div>
+      <div class="prose">
+        <p>Vision-language models can recognize objects and interpret instructions, but a robot also needs to know <em>where to move, how to orient its gripper, and whether an action actually worked</em>. Inferring these details from RGB images alone leaves uncertainty about depth, contact, and spatial relationships.</p>
+        <p><strong>Robo-Harness K1 makes spatial evidence available as tools.</strong> The model can ground a target, request calibrated measurements, track visual references, and inspect grasp hypotheses in its existing camera views. It then chooses generic motion commands and checks the outcome. The harness supplies evidence and execution feedback; the model remains responsible for the manipulation strategy, rather than selecting a task-specific pick-and-place script.</p>
+        <p>The same interface supports both <strong>frontier models without fine-tuning</strong> and <strong>agentic post-training of smaller models</strong>: successful interactions become examples of what to observe, what to measure, and which tool to call next.</p>
+      </div>
+    </section>
     <section class="section demos-section" id="demos" aria-labelledby="demos-title">
       <div class="container">
         <div class="section-heading"><p class="eyebrow">In action</p><h2 id="demos-title">Successful demonstrations</h2></div>
-        <p class="section-intro">Gemini 3.7 Flash with Robo-Harness K1. Selected successes, verified by native simulator replay. Videos show only current camera observations—never historical views.</p>
+        <p class="section-intro">Gemini 3.7 Flash with Robo-Harness K1. These selected successes replay the recorded actions through the final successful simulator state. Each clip shows continuous, clean RGB from the original cameras—no historical views.</p>
         <div class="dataset-heading"><h3>LIBERO-Pro</h3><span>Franka Panda</span></div>
         <div class="demo-grid">
           <figure class="video-card">
-            <video controls playsinline preload="metadata" poster="assets/videos/libero-bowl.jpg" aria-label="LIBERO-Pro: place the bowl on the plate, current camera views with perception overlays">
-              <source src="assets/videos/libero-bowl.mp4" type="video/mp4">
-              <a href="assets/videos/libero-bowl.mp4">Download the bowl placement video</a>
+            <video controls playsinline preload="metadata" poster="assets/videos/libero-bowl.jpg?v=complete" aria-label="LIBERO-Pro: place the bowl on the plate, complete clean RGB replay">
+              <source src="assets/videos/libero-bowl.mp4?v=complete" type="video/mp4">
+              <a href="assets/videos/libero-bowl.mp4?v=complete">Download the bowl placement video</a>
             </video>
-            <figcaption><span class="video-meta">Spatial · Tool overlays</span><h4>Bowl onto plate</h4><p>Locate the bowl between the plate and the ramekin, then place it on the plate.</p></figcaption>
+            <figcaption><span class="video-meta">Spatial · Clean replay</span><h4>Bowl onto plate</h4><p>Locate the bowl between the plate and the ramekin, then place it on the plate.</p></figcaption>
           </figure>
           <figure class="video-card">
-            <video controls playsinline preload="metadata" poster="assets/videos/libero-basket.jpg" aria-label="LIBERO-Pro: place ketchup in the basket, clean current RGB camera views">
-              <source src="assets/videos/libero-basket.mp4" type="video/mp4">
-              <a href="assets/videos/libero-basket.mp4">Download the basket placement video</a>
+            <video controls playsinline preload="metadata" poster="assets/videos/libero-basket.jpg?v=complete" aria-label="LIBERO-Pro: place ketchup in the basket, clean current RGB camera views">
+              <source src="assets/videos/libero-basket.mp4?v=complete" type="video/mp4">
+              <a href="assets/videos/libero-basket.mp4?v=complete">Download the basket placement video</a>
             </video>
-            <figcaption><span class="video-meta">Object · Clean RGB</span><h4>Ketchup into basket</h4><p>Pick the target object and transfer it into the basket.</p></figcaption>
+            <figcaption><span class="video-meta">Object · Clean replay</span><h4>Ketchup into basket</h4><p>Pick the target object and transfer it into the basket.</p></figcaption>
           </figure>
           <figure class="video-card">
-            <video controls playsinline preload="metadata" poster="assets/videos/libero-drawer.jpg" aria-label="LIBERO-Pro: open the middle drawer, current camera views with perception overlays">
-              <source src="assets/videos/libero-drawer.mp4" type="video/mp4">
-              <a href="assets/videos/libero-drawer.mp4">Download the drawer opening video</a>
+            <video controls playsinline preload="metadata" poster="assets/videos/libero-drawer.jpg?v=complete" aria-label="LIBERO-Pro: open the middle drawer, complete clean RGB replay">
+              <source src="assets/videos/libero-drawer.mp4?v=complete" type="video/mp4">
+              <a href="assets/videos/libero-drawer.mp4?v=complete">Download the drawer opening video</a>
             </video>
-            <figcaption><span class="video-meta">Goal · Tool overlays</span><h4>Open the middle drawer</h4><p>Ground the handle and control contact while pulling the drawer open.</p></figcaption>
+            <figcaption><span class="video-meta">Goal · Clean replay</span><h4>Open the middle drawer</h4><p>Ground the handle and control contact while pulling the drawer open.</p></figcaption>
           </figure>
         </div>
         <div class="dataset-heading suite-heading"><h3>RoboSuite</h3><span>Across robot arms</span></div>
         <div class="demo-grid">
           <figure class="video-card">
-            <video controls playsinline preload="metadata" poster="assets/videos/suite-nut.jpg" aria-label="RoboSuite: UR5e nut assembly, current camera views with perception overlays">
-              <source src="assets/videos/suite-nut.mp4" type="video/mp4">
-              <a href="assets/videos/suite-nut.mp4">Download the nut assembly video</a>
+            <video controls playsinline preload="metadata" poster="assets/videos/suite-nut.jpg?v=complete" aria-label="RoboSuite: UR5e nut assembly, complete clean RGB replay">
+              <source src="assets/videos/suite-nut.mp4?v=complete" type="video/mp4">
+              <a href="assets/videos/suite-nut.mp4?v=complete">Download the nut assembly video</a>
             </video>
-            <figcaption><span class="video-meta">UR5e · Tool overlays</span><h4>Nut assembly</h4><p>Grasp the nut, align it over the peg, and lower it into place.</p></figcaption>
+            <figcaption><span class="video-meta">UR5e · Clean replay</span><h4>Nut assembly</h4><p>Grasp the nut, align it over the peg, and lower it into place.</p></figcaption>
           </figure>
           <figure class="video-card">
-            <video controls playsinline preload="metadata" poster="assets/videos/suite-stack.jpg" aria-label="RoboSuite: IIWA cube stacking, clean current RGB camera views">
-              <source src="assets/videos/suite-stack.mp4" type="video/mp4">
-              <a href="assets/videos/suite-stack.mp4">Download the cube stacking video</a>
+            <video controls playsinline preload="metadata" poster="assets/videos/suite-stack.jpg?v=complete" aria-label="RoboSuite: IIWA cube stacking, clean current RGB camera views">
+              <source src="assets/videos/suite-stack.mp4?v=complete" type="video/mp4">
+              <a href="assets/videos/suite-stack.mp4?v=complete">Download the cube stacking video</a>
             </video>
-            <figcaption><span class="video-meta">IIWA · Clean RGB</span><h4>Cube stacking</h4><p>Pick up a cube and stack it on the other cube.</p></figcaption>
+            <figcaption><span class="video-meta">IIWA · Clean replay</span><h4>Cube stacking</h4><p>Pick up a cube and stack it on the other cube.</p></figcaption>
           </figure>
           <figure class="video-card">
-            <video controls playsinline preload="metadata" poster="assets/videos/suite-two-arm.jpg" aria-label="RoboSuite: two Panda arms lifting together, current scene and both wrist camera views">
-              <source src="assets/videos/suite-two-arm.mp4" type="video/mp4">
-              <a href="assets/videos/suite-two-arm.mp4">Download the two-arm lifting video</a>
+            <video controls playsinline preload="metadata" poster="assets/videos/suite-two-arm.jpg?v=complete" aria-label="RoboSuite: two Panda arms lifting together, current scene and both wrist camera views">
+              <source src="assets/videos/suite-two-arm.mp4?v=complete" type="video/mp4">
+              <a href="assets/videos/suite-two-arm.mp4?v=complete">Download the two-arm lifting video</a>
             </video>
-            <figcaption><span class="video-meta">Dual Panda · Tool overlays</span><h4>Two-arm lifting</h4><p>Coordinate both grippers to grasp and lift the pot.</p></figcaption>
+            <figcaption><span class="video-meta">Dual Panda · Clean replay</span><h4>Two-arm lifting</h4><p>Lift the pot with two arms. Native success requires the pot bottom to rise more than 10 cm above the table.</p></figcaption>
           </figure>
         </div>
-        <p class="playback-note">Sampled playback from archived decision-time observations, not continuous or real-time footage. Clean RGB uses the same current sensor frames without overlays. The terminal simulator state can follow the last model observation; success is checked independently. Use fullscreen to inspect the views.</p>
+        <p class="playback-note">Playback follows simulator time at 20 frames per second, with API and tool-computation waiting time omitted. Every recorded control step is included; the actual terminal image is held for two seconds without executing extra actions. Posters show the final state. These are selected examples, not a representative success-rate estimate. Use fullscreen to inspect the views.</p>
       </div>
     </section>
     <section class="section container" id="method" aria-labelledby="method-title">
@@ -97,26 +105,38 @@
         <a href="assets/images/perception-tools.png" aria-label="Open the perception tools figure at full resolution"><img src="assets/images/perception-tools.png" width="2205" height="528" loading="lazy" alt="Region grounding, depth and geometry measurement, anchor tracking, and grasp candidates on existing camera images"></a>
         <figcaption>Ground regions, measure geometry, track visual anchors, and inspect grasp hypotheses in the existing camera views.</figcaption>
       </figure>
+      <div class="method-steps">
+        <article><span class="step-number">01</span><h3>Ground and measure</h3><p>A text query returns labeled candidate regions for the model to inspect. Pixel-depth queries and region geometry turn calibrated RGB-D observations into metric positions, surface directions, and relative displacements. Evidence is projected back into the existing external and wrist-camera images; the model does not need to interpret a raw point cloud.</p></article>
+        <article><span class="step-number">02</span><h3>Act and check the outcome</h3><p>The model selects a grasp hypothesis or specifies a motion itself. Generic tools control translation, rotation, and gripper opening. Small relative moves support fine alignment; direct target moves reduce calls during longer transits. Receipts report achieved motion and residual error, so a requested pose is not confused with a completed movement—or a successful grasp.</p></article>
+        <article><span class="step-number">03</span><h3>Keep useful evidence</h3><p>Persistent region identifiers and tracked anchors help maintain references across actions. Current and previous images support visual comparison, while validity flags distinguish live measurements from uncertain or historical references. A recent interaction window, searchable full history, and model-maintained progress records carry information through longer tasks.</p></article>
+        <article><span class="step-number">04</span><h3>Learn the same tool interface</h3><p>Teacher interactions are filtered into executable next-tool-call examples, paired with the observations and tool evidence available at that decision. We fine-tune Qwen3.5-9B with language-side LoRA and a frozen vision encoder. The student uses the same frozen harness at evaluation, without adding a separate continuous-action prediction head.</p></article>
+      </div>
+      <p class="method-caveat">Measurements describe observed surfaces, not hidden geometry. Tracking can become uncertain, and a grasp candidate is a hypothesis—not a guarantee of collision-free motion or secure contact. Re-observation and execution feedback remain part of the control loop.</p>
     </section>
     <section class="section results-section" id="results" aria-labelledby="results-title">
       <div class="container">
         <div class="section-heading"><p class="eyebrow">Experiments</p><h2 id="results-title">Results</h2></div>
         <article class="result-block">
           <h3>LIBERO-Pro</h3>
+          <p class="result-summary">On matched configurations, adding K1 to GPT-6 Astra raises success from <strong>61.1% to 88.9%</strong>; Gemini 3.7 Flash with K1 reaches <strong>77.8%</strong>. This compares complete robot interfaces, rather than isolating a single perception tool. Across the larger Spatial, Object, and Goal evaluation with swap and task perturbations, Gemini + K1 achieves <strong>77.2%</strong>.</p>
           <figure class="paper-figure"><a href="assets/images/frontier-results.png" aria-label="Open LIBERO-Pro results at full resolution"><img src="assets/images/frontier-results.png" width="1728" height="660" loading="lazy" alt="LIBERO-Pro accuracy: K1 with GPT-6 Astra 88.9%, K1 with Gemini 3.7 Flash 77.8%, RGB-only GPT-6 Astra 61.1%, plus published reference results"></a><figcaption>The top three rows use matched task configurations. Hatched bars are published references with different protocols, not matched reruns. Gemini + K1 reaches 77.2% on the full evaluation.</figcaption></figure>
         </article>
         <article class="result-block">
           <h3>Agentic post-training</h3>
+          <p class="result-summary">Can a smaller model learn to use these tools? At epoch 5, Qwen3.5-9B + K1 reaches <strong>51.2%</strong> on training-matched configurations (A), <strong>44.2%</strong> on new initial states of seen conditions (B), and <strong>13.9%</strong> on held-out task conditions (C). OpenVLA trained from the same demonstration pool reaches <strong>20.9%, 30.2%, and 0.0%</strong>, respectively.</p>
           <figure class="paper-figure"><a href="assets/images/learning-curves.png" aria-label="Open learning curves at full resolution"><img src="assets/images/learning-curves.png" width="1117" height="452" loading="lazy" alt="Learning curves comparing Qwen with K1, RGB-only Qwen, OpenVLA, pi0.5, and Qwen VLA"></a><figcaption>Models share a source demonstration pool. B is a new-state development set; C holds out task conditions from fine-tuning, not necessarily distinct manipulation skills.</figcaption></figure>
+          <p class="result-interpretation">Tool-use supervision is promising in this data-limited comparison, but transfer is not solved: held-out success remains modest, and new-state performance does not improve monotonically with training. These results compare the evaluated training recipes and observation interfaces, not an intrinsic ranking of all agentic models and VLAs.</p>
         </article>
         <article class="result-block transfer-result">
           <h3>RoboSuite transfer</h3>
+          <p class="result-summary">We transfer Gemini + K1 to another simulation environment and different arms using embodiment-specific adapters, without target-environment fine-tuning. On the four shared tasks—cube lifting, restacking, stacking, and nut assembly—success is:</p>
           <div class="accuracy-row" aria-label="Accuracy on the shared RoboSuite tasks">
             <p><strong>90.0<span>%</span></strong><span>Panda</span></p>
             <p><strong>88.8<span>%</span></strong><span>UR5e</span></p>
             <p><strong>86.2<span>%</span></strong><span>IIWA</span></p>
           </div>
           <p class="result-note">Gemini + K1 on the shared tasks, without target-environment fine-tuning. All arms use PandaGripper and embodiment-specific adapters.</p>
+          <p class="result-interpretation">The broader Panda evaluation also includes wiping and two-arm tasks, with <strong>72.1%</strong> overall success. Performance varies substantially: two-arm lifting reaches <strong>75.0%</strong>, while handover reaches only <strong>5.0%</strong>. The transfer results support reuse across arms and environments, but do not imply that dexterous coordination or arbitrary grippers are solved.</p>
         </article>
         <p class="details-link"><a href="https://github.com/Robo-Harness/k1/blob/main/docs/results.md">Evaluation protocols and detailed results <span aria-hidden="true">↗</span></a></p>
       </div>

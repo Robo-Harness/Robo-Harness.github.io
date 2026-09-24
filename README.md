@@ -26,8 +26,8 @@ The `.nojekyll` file keeps the site a plain static export. All assets use relati
 
 The page includes three LIBERO-Pro successes and three RoboSuite successes from Gemini with K1. Native replay records were checked before selecting them.
 
-These are **sampled decision-time observations**, not continuous or real-time recordings. Each distinct observation is shown for 0.8 seconds, with a short final hold. Only the current camera entries are selected from each call's image manifest; history images and auxiliary candidate panels are excluded. The terminal simulator state can occur after the final model observation. Success is verified independently, not inferred from the displayed final frame.
+These are **continuous native-action replays** through the successful terminal state, rendered at 20 frames per second. API and perception-tool waiting time is omitted, so playback follows simulator time, not wall-clock rollout time. Every recorded control step is included. The final simulator image is held for two seconds without executing extra actions; posters show that terminal state.
 
-Clean clips use RGB from the same archived sensor frames; overlay clips use the original current model-input images. Both modes retain the chronological order. Original experiment files are unchanged. Private source paths and audit logs are kept outside this website.
+All six clips use clean RGB from the original camera views, with no historical views or added cameras. Replay checks cover native success, robot trajectories, and agreement with archived sensor images. Original experiment files are unchanged. Private source paths and audit logs are kept outside this website. These selected demonstrations illustrate behavior; the Results section reports performance over the evaluation sets, not over the selected videos.
 
 Only selected figures, derived demonstration clips, and posters are included. No raw trajectories, model requests, datasets, checkpoints, paper draft, or credentials are published here.
