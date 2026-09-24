@@ -18,7 +18,7 @@ Open `http://localhost:8765/k1/`. No build step, package installation, API crede
 
 ## GitHub Pages
 
-The intended repository is `Robo-Harness/Robo-Harness.github.io`. After publication is approved, enable Pages from the `main` branch, root directory. The project URL is `https://robo-harness.github.io/k1/`.
+Website repository: `Robo-Harness/Robo-Harness.github.io`. GitHub Pages publishes the `main` branch, root directory. The project URL is `https://robo-harness.github.io/k1/`. Push changes to `main` to update the site.
 
 The `.nojekyll` file keeps the site a plain static export. All assets use relative paths. No analytics, third-party fonts, cookies, or external JavaScript are used.
 
