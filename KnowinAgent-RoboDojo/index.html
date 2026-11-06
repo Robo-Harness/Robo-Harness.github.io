@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KnowinAgent-RoboDojo: A Self-Evolving Coding Agent for Bimanual Manipulation</title>
+  <meta name="title-en" content="KnowinAgent-RoboDojo: A Self-Evolving Coding Agent for Bimanual Manipulation">
+  <meta name="title-zh" content="KnowinAgent-RoboDojo：自我进化的双臂操作编码智能体">
+  <meta name="description" content="KnowinAgent-RoboDojo reaches 87.60 on the RoboDojo simulation benchmark, mastering most tasks within two training episodes.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/knowin.css">
+</head>
+<body>
+  <section class="hero">
+    <div class="shell">
+      <div class="kicker">RoboDojo · Bimanual Manipulation</div>
+      <h1>Knowin<b>Agent</b><wbr><span class="rd">-RoboDojo</span></h1>
+      <p class="tag"><span lang="en">A self-evolving coding agent that masters bimanual manipulation from a handful of trials.</span><span lang="zh">从少量试错中习得双臂操作的自我进化编码智能体。</span></p>
+      <div class="by"><b>Knowin</b> · <span lang="en">Technical Report · November 2026</span><span lang="zh">技术报告 · 2026 年 11 月</span></div>
+      <div class="buttons">
+        <a class="btn dark" href="showcase.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg><span lang="en">Rollouts</span><span lang="zh">测试录像</span></a>
+        <a class="btn" href="leaderboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 20V10M12 20V4M19 20v-7"/></svg><span lang="en">Leaderboard</span><span lang="zh">榜单</span></a>
+        <a class="btn" href="results.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 4v16"/></svg><span lang="en">Per-task Results</span><span lang="zh">逐任务成绩</span></a>
+      </div>
+      <figure class="teaser">
+        <video src="media/hero-20261105.mp4" poster="media/hero-20261105.jpg" autoplay muted loop playsinline></video>
+        <figcaption><span lang="en"><b>Test-time rollouts</b> on eight RoboDojo tasks — frozen knowledge, no score feedback, a single attempt per episode.</span><span lang="zh">八个 RoboDojo 任务上的<b>测试回合</b>：知识冻结、无分数反馈、每局仅一次机会。</span></figcaption>
+      </figure>
+      <div class="figures" id="figures"></div>
+      <p class="evalnote" data-evalnote></p>
+    </div>
+  </section>
+
+  <section class="section" id="abstract">
+    <div class="narrow abstract reveal">
+      <div class="eyebrow"><span lang="en">Abstract</span><span lang="zh">摘要</span></div>
+      <h2><span lang="en">Reasoning that lands in the physical world</span><span lang="zh">让推理稳定落到物理世界</span></h2>
+      <p lang="en">Language models can write programs that drive robots, yet the same model can score several times higher or lower depending on the system built around it. KnowinAgent-RoboDojo treats that system as the object of design. The agent acts by submitting short programs; a trackable execution layer turns controller limits into planning constraints; budget governance is centred on native action steps and rejects premature completion; and an evidence-grounded evolution loop converts a few practice episodes into frozen, verifiable task knowledge.</p>
+      <p lang="en">Across all 54 task variants of the RoboDojo simulation benchmark, KnowinAgent-RoboDojo reaches <b>87.60</b>, the highest score under the official five-dimension formula. Most tasks are mastered with just <b>two training episodes</b>, and 11 of 12 randomized-layout variants are solved with no additional training.</p>
+      <p lang="zh">语言模型已经能够编写程序驱动机器人，但同一个模型在不同系统之上的表现可以相差数倍。KnowinAgent-RoboDojo 把这套系统本身作为设计对象：智能体以短程序作为动作；可跟踪执行层把控制器的跟踪极限转化为规划约束；预算治理以原生动作步数为中心，并拦截过早的“完成”判断；证据化的进化闭环把少量练习回合沉淀为冻结、可校验的任务知识。</p>
+      <p lang="zh">在 RoboDojo 仿真基准全部 54 个任务变体上，KnowinAgent-RoboDojo 取得 <b>87.60</b> 分，为官方五维计分公式下的最高成绩。多数任务只需 <b>2 个训练回合</b>即可掌握，12 个随机布局变体中有 11 个无需任何额外训练。</p>
+    </div>
+  </section>
+
+  <section class="section soft" id="results">
+    <div class="shell">
+      <div class="reveal">
+        <div class="eyebrow"><span lang="en">Results</span><span lang="zh">结果</span></div>
+        <h2><span lang="en">Leading the RoboDojo simulation leaderboard</span><span lang="zh">位居 RoboDojo 仿真榜首</span></h2>
+        <p class="lead" id="lb-lead"></p>
+      </div>
+      <div class="controls">
+        <div class="seg" id="lb-dim"></div>
+        <div class="seg" id="lb-metric"><button data-v="score" class="on">Score</button><button data-v="sr">SR</button></div>
+        <div class="seg" id="lb-scope"><button data-v="sel" class="on"><span lang="en">Selected</span><span lang="zh">代表方法</span></button><button data-v="top"><span lang="en">Top 15</span><span lang="zh">前 15 名</span></button></div>
+      </div>
+      <div class="rank" id="rank"></div>
+      <p class="evalnote"><span lang="en">KnowinAgent-RoboDojo: 5 test episodes per variant. Other methods: official RoboDojo leaderboard, 25–50 episodes per task.</span><span lang="zh">KnowinAgent-RoboDojo：每个变体 5 局测试；其他方法：RoboDojo 官网榜单，每个任务 25–50 局。</span></p>
+      <a class="more" href="leaderboard.html"><span lang="en">Full leaderboard</span><span lang="zh">查看完整榜单</span> →</a>
+    </div>
+  </section>
+
+  <section class="section" id="training">
+    <div class="shell">
+      <div class="reveal">
+        <div class="eyebrow"><span lang="en">Training</span><span lang="zh">训练</span></div>
+        <h2><span lang="en">Most tasks are mastered in two training episodes</span><span lang="zh">多数任务两个训练回合即可掌握</span></h2>
+        <p class="lead"><span lang="en">Each training episode is a practice run with score feedback; a review agent that never touches the simulator then distils the evidence into skills and lessons, which are frozen before testing. We count the training episodes behind every frozen knowledge version, following its full lineage.</span><span lang="zh">每个训练回合是一局带分数反馈的练习；之后由不接触仿真器的复盘智能体把证据提炼为技能与经验，冻结后再进入测试。我们沿完整的知识链路，统计每份冻结知识背后的训练回合数。</span></p>
+      </div>
+      <div class="grid2" style="margin-top:44px">
+        <div class="reveal">
+          <div class="cols" id="cols"></div>
+          <div class="cols-x" id="cols-x"></div>
+          <div class="legend"><span><i style="background:var(--accent)"></i>100 in all five tests</span><span><i style="background:var(--gray)"></i>Other variants</span></div>
+          <p class="cap"><span lang="en"><b>Figure 1.</b> Task variants by the number of training episodes behind their frozen knowledge.</span><span lang="zh"><b>图 1</b>　按冻结知识背后的训练回合数统计任务变体。</span></p>
+        </div>
+        <div class="facts reveal" id="facts"></div>
+      </div>
+      <h3 style="margin:64px 0 4px;font-size:19px;letter-spacing:-.02em"><span lang="en">Returns beyond four episodes</span><span lang="zh">四个回合之后的收益</span></h3>
+      <p class="cap" style="margin-top:0"><span lang="en">Tasks whose lineage was tested both at ≤ 4 and at 6 training episodes. Values are test means.</span><span lang="zh">在 ≤ 4 和 6 个训练回合时都做过测试的任务。数值为测试均分。</span></p>
+      <div class="tbl-wrap"><table class="bt" id="beyond"></table></div>
+    </div>
+  </section>
+
+  <section class="section soft" id="method">
+    <div class="shell">
+      <div class="reveal">
+        <div class="eyebrow"><span lang="en">Method</span><span lang="zh">方法</span></div>
+        <h2><span lang="en">The system beneath the model</span><span lang="zh">模型之下的系统</span></h2>
+        <p class="lead"><span lang="en">Five core techniques form a complete loop from perception and decision-making to execution and evolution.</span><span lang="zh">五项核心技术，构成从感知、决策、执行到进化的完整闭环。</span></p>
+      </div>
+      <div class="matrix">
+        <div class="mx-row reveal">
+          <h3><span class="no">1</span><span lang="en">Embodied Experience Self-Evolution</span><span lang="zh">具身经验自进化</span></h3>
+          <p><span lang="en">Distils transferable skills from interaction trajectories and constrains every knowledge update with execution evidence, achieving few-shot mastery and cross-layout generalization.</span><span lang="zh">从交互轨迹中归纳可迁移技能，以执行证据约束每一次知识更新，实现少样本掌握与跨布局泛化。</span></p>
+          <p class="o"><span lang="en">Median <b>2</b> training episodes · <b>11/12</b> random layouts reused</span><span lang="zh">训练回合中位数 <b>2</b> · <b>11/12</b> 随机布局直接复用</span></p>
+        </div>
+        <div class="mx-row reveal">
+          <h3><span class="no">2</span><span lang="en">Active Perception with Metacognitive Decision-Making</span><span lang="zh">主动感知与元认知决策</span></h3>
+          <p><span lang="en">Task demands drive viewpoint selection, with hierarchical judgement between action-level correction and plan-level replanning.</span><span lang="zh">由任务需求驱动视角选择，在动作层修正与方案层重规划之间进行分层判断。</span></p>
+          <p class="o"><span lang="en"><b>Millimetre</b> offsets corrected on the spot</span><span lang="zh"><b>毫米级</b>偏差就地修正</span></p>
+        </div>
+        <div class="mx-row reveal">
+          <h3><span class="no">3</span><span lang="en">Metric-Grade Spatial Perception</span><span lang="zh">度量级空间感知</span></h3>
+          <p><span lang="en">Learned priors and multi-view geometric constraints are solved jointly and verified in closed loop by reprojection consistency, reaching sub-centimetre to millimetre localization.</span><span lang="zh">学习先验与多视几何约束联合求解，以重投影一致性闭环校验，实现亚厘米至毫米级定位。</span></p>
+          <p class="o"><span lang="en">Median error <b>8.3 mm</b> head camera · <b>0.4 mm</b> wrist</span><span lang="zh">定位误差中位数：头部 <b>8.3 mm</b> · 腕部 <b>0.4 mm</b></span></p>
+        </div>
+        <div class="mx-row reveal">
+          <h3><span class="no">4</span><span lang="en">Budget-Constrained Long-Horizon Planning</span><span lang="zh">预算约束下的长程规划</span></h3>
+          <p><span lang="en">Makes the physical interaction budget an explicit part of planning and, with bimanual parallel scheduling, carries long-horizon tasks through to completion.</span><span lang="zh">将物理交互预算显式纳入规划，结合双臂并行调度，保障长程任务的完整闭环。</span></p>
+          <p class="o"><span lang="en"><b>Every step</b> leaves room to finish the task</span><span lang="zh"><b>每一步</b>都留有完成任务的空间</span></p>
+        </div>
+        <div class="mx-row reveal">
+          <h3><span class="no">5</span><span lang="en">Counterfactual Review and Pre-Commit Verification</span><span lang="zh">反事实复盘与前置校验</span></h3>
+          <p><span lang="en">Attributes success to its causes and moves post-hoc corrections forward into pre-execution predictions, so irreversible actions succeed on the first attempt.</span><span lang="zh">对成功进行归因分析，将事后修正前移为事前预测，使不可逆操作在首次执行即可成立。</span></p>
+          <p class="o"><span lang="en">Pouring: <b>5/5</b> test episodes succeeded on both layouts</span><span lang="zh">倒水任务标准与随机布局均 <b>5/5</b> 局成功</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="rollouts">
+    <div class="shell">
+      <div class="reveal">
+        <div class="eyebrow"><span lang="en">Rollouts</span><span lang="zh">录像</span></div>
+        <h2><span lang="en">Every test episode, recorded end to end</span><span lang="zh">每一局测试，完整记录</span></h2>
+        <p class="lead"><span lang="en">Head-camera recordings of all 270 test episodes across 54 task variants. Hover to preview.</span><span lang="zh">54 个任务变体、全部 270 局测试的头部相机完整录像。悬停即可预览。</span></p>
+      </div>
+      <div class="tiles" id="tiles"></div>
+      <a class="more" href="showcase.html"><span lang="en">Browse all rollouts</span><span lang="zh">浏览全部录像</span> →</a>
+    </div>
+  </section>
+
+  <script src="assets/js/k.js"></script>
+  <script src="assets/js/p-home.js"></script>
+</body>
+</html>

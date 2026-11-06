@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rollouts · KnowinAgent-RoboDojo</title>
+  <meta name="title-en" content="Rollouts · KnowinAgent-RoboDojo">
+  <meta name="title-zh" content="测试录像 · KnowinAgent-RoboDojo">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/knowin.css">
+</head>
+<body>
+  <section class="phead">
+    <div class="shell">
+      <div class="eyebrow">Rollouts · arx_x5</div>
+      <h1><span lang="en">Test rollouts</span><span lang="zh">测试录像</span></h1>
+      <p class="lead"><span lang="en">Head-camera recordings of every test episode. Knowledge is frozen, no score is shown to the agent, and each episode is a single attempt. Each task variant has 5 test episodes; the comparison bars use the official leaderboard (25–50 episodes per task).</span><span lang="zh">每一局测试的头部相机完整录像。知识冻结、智能体看不到分数、每局仅一次机会。每个任务变体 5 局测试；对比条中的其他方法来自官网榜单（每个任务 25–50 局）。</span></p>
+      <p class="evalnote" data-evalnote></p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:8px">
+    <div class="shell">
+      <div class="explorer">
+        <aside class="tasklist">
+          <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="q" data-ph-en="Search tasks  ( / )" data-ph-zh="搜索任务（/）" placeholder="Search tasks  ( / )"></label>
+          <div class="seg" id="dims"></div>
+          <div class="count" id="count"></div>
+          <div class="items" id="items"></div>
+        </aside>
+        <div>
+          <div class="dhead">
+            <div><h2 id="d-title"></h2><div class="meta" id="d-meta"></div></div>
+            <div class="avg"><div class="l">AVG</div><div class="v" id="d-avg"></div></div>
+          </div>
+          <div class="chips" id="d-chips"></div>
+          <p class="desc" id="d-desc"></p>
+          <div class="minibars" id="d-cmp"></div>
+          <div class="clips" id="d-clips"></div>
+          <p class="hint"><span lang="en">Keys: / search · ↑ ↓ switch task · 1–5 play an episode</span><span lang="zh">快捷键：/ 搜索 · ↑ ↓ 切换任务 · 1–5 播放对应回合</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="assets/js/k.js"></script>
+  <script src="assets/js/p-showcase.js"></script>
+</body>
+</html>

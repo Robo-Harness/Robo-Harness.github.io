@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Per-task Results · KnowinAgent-RoboDojo</title>
+  <meta name="title-en" content="Per-task Results · KnowinAgent-RoboDojo">
+  <meta name="title-zh" content="逐任务成绩 · KnowinAgent-RoboDojo">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/knowin.css">
+</head>
+<body>
+  <section class="phead">
+    <div class="shell">
+      <div class="eyebrow">RoboDojo · 54 task variants</div>
+      <h1><span lang="en">Per-task results</span><span lang="zh">逐任务成绩</span></h1>
+      <p class="lead"><span lang="en">Every task variant against the leading published methods, together with the number of training episodes behind KnowinAgent-RoboDojo's knowledge. Select a row to watch its rollouts.</span><span lang="zh">每个任务变体与榜单前列方法的对比，以及 KnowinAgent-RoboDojo 对应知识背后的训练回合数。点击任意一行查看录像。</span></p>
+      <div class="figures" id="figures"></div>
+      <p class="evalnote" data-evalnote></p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:56px">
+    <div class="shell">
+      <div class="controls" style="margin-top:0">
+        <div class="seg" id="dim"></div>
+        <div class="seg" id="metric"><button data-v="score" class="on">Score</button><button data-v="sr">SR</button></div>
+        <div class="seg" id="merge"><button data-v="split" class="on"><span lang="en">Variants</span><span lang="zh">按变体</span></button><button data-v="merge"><span lang="en">Merge layouts</span><span lang="zh">合并布局</span></button></div>
+        <div class="seg" id="sort"></div>
+      </div>
+      <div class="tbl-wrap tbl-scroll">
+        <table class="bt heat" id="heat"><thead></thead><tbody></tbody></table>
+      </div>
+      <p class="cap" id="cap"></p>
+    </div>
+  </section>
+
+  <script src="assets/js/k.js"></script>
+  <script src="assets/js/p-results.js"></script>
+</body>
+</html>

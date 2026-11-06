@@ -1,0 +1,2837 @@
+{
+ "dimensions": {
+  "Generalization": "泛化",
+  "Precision": "精度",
+  "Long-Horizon": "长程",
+  "Memory": "记忆",
+  "Open": "开放"
+ },
+ "categories": {
+  "pour": "倾倒（液体 / 颗粒）",
+  "push": "非抓取推移 / 清扫",
+  "insert": "插入与紧配合装配",
+  "dynamic": "动态场景（传送带 / 对弈）",
+  "deformable": "柔性体操作",
+  "rigid": "刚体抓放 / 堆叠 / 整理",
+  "articulated": "铰接 / 按压 / 敲击"
+ },
+ "categories_en": {
+  "pour": "Pouring (liquid / granular)",
+  "push": "Non-prehensile pushing / sweeping",
+  "insert": "Insertion & tight-fit assembly",
+  "dynamic": "Dynamic scenes (conveyor / opponent)",
+  "deformable": "Deformable objects",
+  "rigid": "Rigid pick-place / stacking / tidying",
+  "articulated": "Articulated / pressing / striking"
+ },
+ "tasks": [
+  {
+   "id": "arrange_largest_number",
+   "base": "arrange_largest_number",
+   "random": false,
+   "name": "拼出最大数",
+   "name_en": "arrange_largest_number",
+   "dimension": "Generalization",
+   "category": "rigid",
+   "description": "判断数字卡片能组成的最大数，并按顺序从左到右摆放到垫板上。",
+   "description_en": "There are several number tiles on the table and a pad for placement. The robot needs to determine the order that forms the largest possible number, then place the four numbers on the pad from left to right in that order.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/arrange_largest_number/01.mp4",
+     "poster": "media/posters/arrange_largest_number/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/arrange_largest_number/02.mp4",
+     "poster": "media/posters/arrange_largest_number/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/arrange_largest_number/03.mp4",
+     "poster": "media/posters/arrange_largest_number/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/arrange_largest_number/04.mp4",
+     "poster": "media/posters/arrange_largest_number/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/arrange_largest_number/05.mp4",
+     "poster": "media/posters/arrange_largest_number/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/arrange_largest_number/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "arrange_largest_number_random",
+   "base": "arrange_largest_number",
+   "random": true,
+   "name": "拼出最大数（随机布局）",
+   "name_en": "arrange_largest_number_random",
+   "dimension": "Generalization",
+   "category": "rigid",
+   "description": "判断数字卡片能组成的最大数，并按顺序从左到右摆放到垫板上。",
+   "description_en": "There are several number tiles on the table and a pad for placement. The robot needs to determine the order that forms the largest possible number, then place the four numbers on the pad from left to right in that order.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/arrange_largest_number_random/01.mp4",
+     "poster": "media/posters/arrange_largest_number_random/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/arrange_largest_number_random/02.mp4",
+     "poster": "media/posters/arrange_largest_number_random/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/arrange_largest_number_random/03.mp4",
+     "poster": "media/posters/arrange_largest_number_random/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/arrange_largest_number_random/04.mp4",
+     "poster": "media/posters/arrange_largest_number_random/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/arrange_largest_number_random/05.mp4",
+     "poster": "media/posters/arrange_largest_number_random/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/arrange_largest_number_random/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "fold_clothes",
+   "base": "fold_clothes",
+   "random": false,
+   "name": "叠衣服",
+   "name_en": "fold_clothes",
+   "dimension": "Generalization",
+   "category": "deformable",
+   "description": "将一件衣物整齐折叠。",
+   "description_en": "There is a piece of clothing. The robot needs to fold it neatly.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fold_clothes/01.mp4",
+     "poster": "media/posters/fold_clothes/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fold_clothes/02.mp4",
+     "poster": "media/posters/fold_clothes/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fold_clothes/03.mp4",
+     "poster": "media/posters/fold_clothes/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fold_clothes/04.mp4",
+     "poster": "media/posters/fold_clothes/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fold_clothes/05.mp4",
+     "poster": "media/posters/fold_clothes/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/fold_clothes/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "fold_clothes_random",
+   "base": "fold_clothes",
+   "random": true,
+   "name": "叠衣服（随机布局）",
+   "name_en": "fold_clothes_random",
+   "dimension": "Generalization",
+   "category": "deformable",
+   "description": "将一件衣物整齐折叠。",
+   "description_en": "There is a piece of clothing. The robot needs to fold it neatly.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fold_clothes_random/01.mp4",
+     "poster": "media/posters/fold_clothes_random/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fold_clothes_random/02.mp4",
+     "poster": "media/posters/fold_clothes_random/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fold_clothes_random/03.mp4",
+     "poster": "media/posters/fold_clothes_random/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fold_clothes_random/04.mp4",
+     "poster": "media/posters/fold_clothes_random/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fold_clothes_random/05.mp4",
+     "poster": "media/posters/fold_clothes_random/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/fold_clothes_random/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "hang_mugs",
+   "base": "hang_mugs",
+   "random": false,
+   "name": "挂杯子",
+   "name_en": "hang_mugs",
+   "dimension": "Generalization",
+   "category": "insert",
+   "description": "依次拿起三个杯子，全部挂到杯架上。",
+   "description_en": "There are three mugs and one mug rack. The robot needs to pick up each mug and hang all of them on the rack.",
+   "score": 88.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/hang_mugs/01.mp4",
+     "poster": "media/posters/hang_mugs/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/hang_mugs/02.mp4",
+     "poster": "media/posters/hang_mugs/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 40.0,
+     "success": false,
+     "video": "media/videos/hang_mugs/03.mp4",
+     "poster": "media/posters/hang_mugs/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/hang_mugs/04.mp4",
+     "poster": "media/posters/hang_mugs/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/hang_mugs/05.mp4",
+     "poster": "media/posters/hang_mugs/05.jpg"
+    }
+   ],
+   "successes": 4,
+   "cover": "media/posters/hang_mugs/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "hang_mugs_random",
+   "base": "hang_mugs",
+   "random": true,
+   "name": "挂杯子（随机布局）",
+   "name_en": "hang_mugs_random",
+   "dimension": "Generalization",
+   "category": "insert",
+   "description": "依次拿起三个杯子，全部挂到杯架上。",
+   "description_en": "There are three mugs and one mug rack. The robot needs to pick up each mug and hang all of them on the rack.",
+   "score": 42.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 15.0,
+     "success": false,
+     "video": "media/videos/hang_mugs_random/01.mp4",
+     "poster": "media/posters/hang_mugs_random/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 15.0,
+     "success": false,
+     "video": "media/videos/hang_mugs_random/02.mp4",
+     "poster": "media/posters/hang_mugs_random/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 40.0,
+     "success": false,
+     "video": "media/videos/hang_mugs_random/03.mp4",
+     "poster": "media/posters/hang_mugs_random/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/hang_mugs_random/04.mp4",
+     "poster": "media/posters/hang_mugs_random/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 40.0,
+     "success": false,
+     "video": "media/videos/hang_mugs_random/05.mp4",
+     "poster": "media/posters/hang_mugs_random/05.jpg"
+    }
+   ],
+   "successes": 1,
+   "cover": "media/posters/hang_mugs_random/04.jpg",
+   "cover_episode": 4
+  },
+  {
+   "id": "make_toast",
+   "base": "make_toast",
+   "random": false,
+   "name": "制作吐司",
+   "name_en": "make_toast",
+   "dimension": "Generalization",
+   "category": "insert",
+   "description": "从篮子中取出两片面包放入烤面包机，再按下拉杆开始烘烤。",
+   "description_en": "There is a basket containing multiple slices of bread and a toaster. The robot needs to pick up two slices one by one, place them into the toaster, and then press the lever down to start toasting.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/make_toast/01.mp4",
+     "poster": "media/posters/make_toast/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/make_toast/02.mp4",
+     "poster": "media/posters/make_toast/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/make_toast/03.mp4",
+     "poster": "media/posters/make_toast/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/make_toast/04.mp4",
+     "poster": "media/posters/make_toast/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/make_toast/05.mp4",
+     "poster": "media/posters/make_toast/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/make_toast/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "make_toast_random",
+   "base": "make_toast",
+   "random": true,
+   "name": "制作吐司（随机布局）",
+   "name_en": "make_toast_random",
+   "dimension": "Generalization",
+   "category": "insert",
+   "description": "从篮子中取出两片面包放入烤面包机，再按下拉杆开始烘烤。",
+   "description_en": "There is a basket containing multiple slices of bread and a toaster. The robot needs to pick up two slices one by one, place them into the toaster, and then press the lever down to start toasting.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/make_toast_random/01.mp4",
+     "poster": "media/posters/make_toast_random/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/make_toast_random/02.mp4",
+     "poster": "media/posters/make_toast_random/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/make_toast_random/03.mp4",
+     "poster": "media/posters/make_toast_random/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/make_toast_random/04.mp4",
+     "poster": "media/posters/make_toast_random/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/make_toast_random/05.mp4",
+     "poster": "media/posters/make_toast_random/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/make_toast_random/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "pack_objects_into_box",
+   "base": "pack_objects_into_box",
+   "random": false,
+   "name": "装箱",
+   "name_en": "pack_objects_into_box",
+   "dimension": "Generalization",
+   "category": "rigid",
+   "description": "把桌上所有物品放入箱子，并使每件物品正面朝左。",
+   "description_en": "There are several objects on the table and a box. The robot needs to pick up all the objects, place them into the box, and ensure that each object is oriented with its front side facing left.",
+   "score": 42.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pack_objects_into_box/01.mp4",
+     "poster": "media/posters/pack_objects_into_box/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 50.0,
+     "success": false,
+     "video": "media/videos/pack_objects_into_box/02.mp4",
+     "poster": "media/posters/pack_objects_into_box/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 25.0,
+     "success": false,
+     "video": "media/videos/pack_objects_into_box/03.mp4",
+     "poster": "media/posters/pack_objects_into_box/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 25.0,
+     "success": false,
+     "video": "media/videos/pack_objects_into_box/04.mp4",
+     "poster": "media/posters/pack_objects_into_box/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 10.0,
+     "success": false,
+     "video": "media/videos/pack_objects_into_box/05.mp4",
+     "poster": "media/posters/pack_objects_into_box/05.jpg"
+    }
+   ],
+   "successes": 1,
+   "cover": "media/posters/pack_objects_into_box/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "pack_objects_into_box_random",
+   "base": "pack_objects_into_box",
+   "random": true,
+   "name": "装箱（随机布局）",
+   "name_en": "pack_objects_into_box_random",
+   "dimension": "Generalization",
+   "category": "rigid",
+   "description": "把桌上所有物品放入箱子，并使每件物品正面朝左。",
+   "description_en": "There are several objects on the table and a box. The robot needs to pick up all the objects, place them into the box, and ensure that each object is oriented with its front side facing left.",
+   "score": 54.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pack_objects_into_box_random/01.mp4",
+     "poster": "media/posters/pack_objects_into_box_random/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 10.0,
+     "success": false,
+     "video": "media/videos/pack_objects_into_box_random/02.mp4",
+     "poster": "media/posters/pack_objects_into_box_random/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 10.0,
+     "success": false,
+     "video": "media/videos/pack_objects_into_box_random/03.mp4",
+     "poster": "media/posters/pack_objects_into_box_random/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pack_objects_into_box_random/04.mp4",
+     "poster": "media/posters/pack_objects_into_box_random/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 50.0,
+     "success": false,
+     "video": "media/videos/pack_objects_into_box_random/05.mp4",
+     "poster": "media/posters/pack_objects_into_box_random/05.jpg"
+    }
+   ],
+   "successes": 2,
+   "cover": "media/posters/pack_objects_into_box_random/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "pour_liquid_into_cup",
+   "base": "pour_liquid_into_cup",
+   "random": false,
+   "name": "倒液体入杯",
+   "name_en": "pour_liquid_into_cup",
+   "dimension": "Generalization",
+   "category": "pour",
+   "description": "拿起装有液体的瓶子，将液体倒入杯中。",
+   "description_en": "There is a bottle containing liquid and a cup. The robot needs to pick up the bottle and pour the liquid into the cup.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_liquid_into_cup/01.mp4",
+     "poster": "media/posters/pour_liquid_into_cup/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_liquid_into_cup/02.mp4",
+     "poster": "media/posters/pour_liquid_into_cup/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_liquid_into_cup/03.mp4",
+     "poster": "media/posters/pour_liquid_into_cup/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_liquid_into_cup/04.mp4",
+     "poster": "media/posters/pour_liquid_into_cup/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_liquid_into_cup/05.mp4",
+     "poster": "media/posters/pour_liquid_into_cup/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/pour_liquid_into_cup/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "pour_liquid_into_cup_random",
+   "base": "pour_liquid_into_cup",
+   "random": true,
+   "name": "倒液体入杯（随机布局）",
+   "name_en": "pour_liquid_into_cup_random",
+   "dimension": "Generalization",
+   "category": "pour",
+   "description": "拿起装有液体的瓶子，将液体倒入杯中。",
+   "description_en": "There is a bottle containing liquid and a cup. The robot needs to pick up the bottle and pour the liquid into the cup.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_liquid_into_cup_random/01.mp4",
+     "poster": "media/posters/pour_liquid_into_cup_random/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_liquid_into_cup_random/02.mp4",
+     "poster": "media/posters/pour_liquid_into_cup_random/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_liquid_into_cup_random/03.mp4",
+     "poster": "media/posters/pour_liquid_into_cup_random/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_liquid_into_cup_random/04.mp4",
+     "poster": "media/posters/pour_liquid_into_cup_random/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_liquid_into_cup_random/05.mp4",
+     "poster": "media/posters/pour_liquid_into_cup_random/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/pour_liquid_into_cup_random/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "push_T",
+   "base": "push_T",
+   "random": false,
+   "name": "推 T 形块",
+   "name_en": "push_T",
+   "dimension": "Generalization",
+   "category": "push",
+   "description": "推动 T 形块，使其与灰色 T 形垫板精确重合。",
+   "description_en": "There is a thin gray T-shaped pad and a T-shaped block. The robot needs to push the T-shaped block until it is precisely aligned with and fitted onto the gray pad.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/push_T/01.mp4",
+     "poster": "media/posters/push_T/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/push_T/02.mp4",
+     "poster": "media/posters/push_T/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/push_T/03.mp4",
+     "poster": "media/posters/push_T/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/push_T/04.mp4",
+     "poster": "media/posters/push_T/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/push_T/05.mp4",
+     "poster": "media/posters/push_T/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/push_T/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "push_T_random",
+   "base": "push_T",
+   "random": true,
+   "name": "推 T 形块（随机布局）",
+   "name_en": "push_T_random",
+   "dimension": "Generalization",
+   "category": "push",
+   "description": "推动 T 形块，使其与灰色 T 形垫板精确重合。",
+   "description_en": "There is a thin gray T-shaped pad and a T-shaped block. The robot needs to push the T-shaped block until it is precisely aligned with and fitted onto the gray pad.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/push_T_random/01.mp4",
+     "poster": "media/posters/push_T_random/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/push_T_random/02.mp4",
+     "poster": "media/posters/push_T_random/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/push_T_random/03.mp4",
+     "poster": "media/posters/push_T_random/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/push_T_random/04.mp4",
+     "poster": "media/posters/push_T_random/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/push_T_random/05.mp4",
+     "poster": "media/posters/push_T_random/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/push_T_random/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "sort_nesting_dolls_by_size",
+   "base": "sort_nesting_dolls_by_size",
+   "random": false,
+   "name": "套娃按大小排序",
+   "name_en": "sort_nesting_dolls_by_size",
+   "dimension": "Generalization",
+   "category": "rigid",
+   "description": "将五个大小不同的套娃从左到右、由小到大排成一行。",
+   "description_en": "There are five nesting dolls of different sizes on the table. The robot needs to sort them by size and arrange them in a straight row from left to right, from smallest to largest.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sort_nesting_dolls_by_size/01.mp4",
+     "poster": "media/posters/sort_nesting_dolls_by_size/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sort_nesting_dolls_by_size/02.mp4",
+     "poster": "media/posters/sort_nesting_dolls_by_size/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sort_nesting_dolls_by_size/03.mp4",
+     "poster": "media/posters/sort_nesting_dolls_by_size/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sort_nesting_dolls_by_size/04.mp4",
+     "poster": "media/posters/sort_nesting_dolls_by_size/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sort_nesting_dolls_by_size/05.mp4",
+     "poster": "media/posters/sort_nesting_dolls_by_size/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/sort_nesting_dolls_by_size/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "sort_nesting_dolls_by_size_random",
+   "base": "sort_nesting_dolls_by_size",
+   "random": true,
+   "name": "套娃按大小排序（随机布局）",
+   "name_en": "sort_nesting_dolls_by_size_random",
+   "dimension": "Generalization",
+   "category": "rigid",
+   "description": "将五个大小不同的套娃从左到右、由小到大排成一行。",
+   "description_en": "There are five nesting dolls of different sizes on the table. The robot needs to sort them by size and arrange them in a straight row from left to right, from smallest to largest.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sort_nesting_dolls_by_size_random/01.mp4",
+     "poster": "media/posters/sort_nesting_dolls_by_size_random/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sort_nesting_dolls_by_size_random/02.mp4",
+     "poster": "media/posters/sort_nesting_dolls_by_size_random/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sort_nesting_dolls_by_size_random/03.mp4",
+     "poster": "media/posters/sort_nesting_dolls_by_size_random/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sort_nesting_dolls_by_size_random/04.mp4",
+     "poster": "media/posters/sort_nesting_dolls_by_size_random/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sort_nesting_dolls_by_size_random/05.mp4",
+     "poster": "media/posters/sort_nesting_dolls_by_size_random/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/sort_nesting_dolls_by_size_random/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "stack_blocks",
+   "base": "stack_blocks",
+   "random": false,
+   "name": "堆叠积木",
+   "name_en": "stack_blocks",
+   "dimension": "Generalization",
+   "category": "rigid",
+   "description": "拾起三块不同纹理的积木，堆成稳定的一摞。",
+   "description_en": "There are three blocks with different textures on the table. The robot needs to pick them up and stack them into a stable pile.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_blocks/01.mp4",
+     "poster": "media/posters/stack_blocks/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_blocks/02.mp4",
+     "poster": "media/posters/stack_blocks/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_blocks/03.mp4",
+     "poster": "media/posters/stack_blocks/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_blocks/04.mp4",
+     "poster": "media/posters/stack_blocks/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_blocks/05.mp4",
+     "poster": "media/posters/stack_blocks/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/stack_blocks/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "stack_blocks_random",
+   "base": "stack_blocks",
+   "random": true,
+   "name": "堆叠积木（随机布局）",
+   "name_en": "stack_blocks_random",
+   "dimension": "Generalization",
+   "category": "rigid",
+   "description": "拾起三块不同纹理的积木，堆成稳定的一摞。",
+   "description_en": "There are three blocks with different textures on the table. The robot needs to pick them up and stack them into a stable pile.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_blocks_random/01.mp4",
+     "poster": "media/posters/stack_blocks_random/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_blocks_random/02.mp4",
+     "poster": "media/posters/stack_blocks_random/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_blocks_random/03.mp4",
+     "poster": "media/posters/stack_blocks_random/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_blocks_random/04.mp4",
+     "poster": "media/posters/stack_blocks_random/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_blocks_random/05.mp4",
+     "poster": "media/posters/stack_blocks_random/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/stack_blocks_random/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "stack_bowls",
+   "base": "stack_bowls",
+   "random": false,
+   "name": "叠碗",
+   "name_en": "stack_bowls",
+   "dimension": "Generalization",
+   "category": "rigid",
+   "description": "把三个碗叠放在一起。",
+   "description_en": "There are three bowls. The robot needs to stack all the bowls together.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_bowls/01.mp4",
+     "poster": "media/posters/stack_bowls/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_bowls/02.mp4",
+     "poster": "media/posters/stack_bowls/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_bowls/03.mp4",
+     "poster": "media/posters/stack_bowls/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_bowls/04.mp4",
+     "poster": "media/posters/stack_bowls/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_bowls/05.mp4",
+     "poster": "media/posters/stack_bowls/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/stack_bowls/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "stack_bowls_random",
+   "base": "stack_bowls",
+   "random": true,
+   "name": "叠碗（随机布局）",
+   "name_en": "stack_bowls_random",
+   "dimension": "Generalization",
+   "category": "rigid",
+   "description": "把三个碗叠放在一起。",
+   "description_en": "There are three bowls. The robot needs to stack all the bowls together.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_bowls_random/01.mp4",
+     "poster": "media/posters/stack_bowls_random/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_bowls_random/02.mp4",
+     "poster": "media/posters/stack_bowls_random/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_bowls_random/03.mp4",
+     "poster": "media/posters/stack_bowls_random/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_bowls_random/04.mp4",
+     "poster": "media/posters/stack_bowls_random/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_bowls_random/05.mp4",
+     "poster": "media/posters/stack_bowls_random/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/stack_bowls_random/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "store_laptop_and_headphones",
+   "base": "store_laptop_and_headphones",
+   "random": false,
+   "name": "收纳笔记本与耳机",
+   "name_en": "store_laptop_and_headphones",
+   "dimension": "Generalization",
+   "category": "articulated",
+   "description": "先把耳机挂上耳机架，再合上笔记本，从支架取下插入立式支架。",
+   "description_en": "There is an open laptop on a laptop stand, a vertical laptop stand, a pair of headphones, and a headphone stand. The laptop opening angle is random but greater than 30 degrees. The robot needs to first hang the headphones on the headphone stand, then close the laptop, pick it up from the stand, and insert it into the vertical laptop stand.",
+   "score": 16.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 20.0,
+     "success": false,
+     "video": "media/videos/store_laptop_and_headphones/01.mp4",
+     "poster": "media/posters/store_laptop_and_headphones/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 20.0,
+     "success": false,
+     "video": "media/videos/store_laptop_and_headphones/02.mp4",
+     "poster": "media/posters/store_laptop_and_headphones/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 0.0,
+     "success": false,
+     "video": "media/videos/store_laptop_and_headphones/03.mp4",
+     "poster": "media/posters/store_laptop_and_headphones/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 20.0,
+     "success": false,
+     "video": "media/videos/store_laptop_and_headphones/04.mp4",
+     "poster": "media/posters/store_laptop_and_headphones/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 20.0,
+     "success": false,
+     "video": "media/videos/store_laptop_and_headphones/05.mp4",
+     "poster": "media/posters/store_laptop_and_headphones/05.jpg"
+    }
+   ],
+   "successes": 0,
+   "cover": "media/posters/store_laptop_and_headphones/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "store_laptop_and_headphones_random",
+   "base": "store_laptop_and_headphones",
+   "random": true,
+   "name": "收纳笔记本与耳机（随机布局）",
+   "name_en": "store_laptop_and_headphones_random",
+   "dimension": "Generalization",
+   "category": "articulated",
+   "description": "先把耳机挂上耳机架，再合上笔记本，从支架取下插入立式支架。",
+   "description_en": "There is an open laptop on a laptop stand, a vertical laptop stand, a pair of headphones, and a headphone stand. The laptop opening angle is random but greater than 30 degrees. The robot needs to first hang the headphones on the headphone stand, then close the laptop, pick it up from the stand, and insert it into the vertical laptop stand.",
+   "score": 16.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 20.0,
+     "success": false,
+     "video": "media/videos/store_laptop_and_headphones_random/01.mp4",
+     "poster": "media/posters/store_laptop_and_headphones_random/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 20.0,
+     "success": false,
+     "video": "media/videos/store_laptop_and_headphones_random/02.mp4",
+     "poster": "media/posters/store_laptop_and_headphones_random/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 20.0,
+     "success": false,
+     "video": "media/videos/store_laptop_and_headphones_random/03.mp4",
+     "poster": "media/posters/store_laptop_and_headphones_random/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 20.0,
+     "success": false,
+     "video": "media/videos/store_laptop_and_headphones_random/04.mp4",
+     "poster": "media/posters/store_laptop_and_headphones_random/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 0.0,
+     "success": false,
+     "video": "media/videos/store_laptop_and_headphones_random/05.mp4",
+     "poster": "media/posters/store_laptop_and_headphones_random/05.jpg"
+    }
+   ],
+   "successes": 0,
+   "cover": "media/posters/store_laptop_and_headphones_random/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "sweep_blocks",
+   "base": "sweep_blocks",
+   "random": false,
+   "name": "扫积木",
+   "name_en": "sweep_blocks",
+   "dimension": "Generalization",
+   "category": "push",
+   "description": "拿起扫帚交给右手，左手拿簸箕，把积木扫进簸箕。",
+   "description_en": "There is a broom and a dustpan on the left side, and the blocks are on the right side. The robot needs to pick up the broom, hand it over to the right hand, grasp the dustpan with the left hand, and sweep the blocks into the dustpan.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sweep_blocks/01.mp4",
+     "poster": "media/posters/sweep_blocks/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sweep_blocks/02.mp4",
+     "poster": "media/posters/sweep_blocks/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sweep_blocks/03.mp4",
+     "poster": "media/posters/sweep_blocks/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sweep_blocks/04.mp4",
+     "poster": "media/posters/sweep_blocks/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sweep_blocks/05.mp4",
+     "poster": "media/posters/sweep_blocks/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/sweep_blocks/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "sweep_blocks_random",
+   "base": "sweep_blocks",
+   "random": true,
+   "name": "扫积木（随机布局）",
+   "name_en": "sweep_blocks_random",
+   "dimension": "Generalization",
+   "category": "push",
+   "description": "拿起扫帚交给右手，左手拿簸箕，把积木扫进簸箕。",
+   "description_en": "There is a broom and a dustpan on the left side, and the blocks are on the right side. The robot needs to pick up the broom, hand it over to the right hand, grasp the dustpan with the left hand, and sweep the blocks into the dustpan.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sweep_blocks_random/01.mp4",
+     "poster": "media/posters/sweep_blocks_random/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sweep_blocks_random/02.mp4",
+     "poster": "media/posters/sweep_blocks_random/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sweep_blocks_random/03.mp4",
+     "poster": "media/posters/sweep_blocks_random/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sweep_blocks_random/04.mp4",
+     "poster": "media/posters/sweep_blocks_random/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/sweep_blocks_random/05.mp4",
+     "poster": "media/posters/sweep_blocks_random/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/sweep_blocks_random/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "build_tower",
+   "base": "build_tower",
+   "random": false,
+   "name": "搭建塔楼",
+   "name_en": "build_tower",
+   "dimension": "Precision",
+   "category": "rigid",
+   "description": "将木块与木板逐层放到支撑上，每层居中对齐且保持直立。",
+   "description_en": "There are wooden blocks and wooden boards on the table. The robot needs to place each board or block on the supports below it, keep each layer centered over the layer beneath it, and keep all pieces upright.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/build_tower/01.mp4",
+     "poster": "media/posters/build_tower/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/build_tower/02.mp4",
+     "poster": "media/posters/build_tower/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/build_tower/03.mp4",
+     "poster": "media/posters/build_tower/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/build_tower/04.mp4",
+     "poster": "media/posters/build_tower/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/build_tower/05.mp4",
+     "poster": "media/posters/build_tower/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/build_tower/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "deposit_coin",
+   "base": "deposit_coin",
+   "random": false,
+   "name": "投币入罐",
+   "name_en": "deposit_coin",
+   "dimension": "Precision",
+   "category": "insert",
+   "description": "从支架上取下硬币，精确插入存钱罐投币口。",
+   "description_en": "There is a coin placed on a holder and a coin bank. The robot needs to pick up the coin and accurately insert it into the slot of the coin bank.",
+   "score": 68.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/deposit_coin/01.mp4",
+     "poster": "media/posters/deposit_coin/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/deposit_coin/02.mp4",
+     "poster": "media/posters/deposit_coin/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 20.0,
+     "success": false,
+     "video": "media/videos/deposit_coin/03.mp4",
+     "poster": "media/posters/deposit_coin/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/deposit_coin/04.mp4",
+     "poster": "media/posters/deposit_coin/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 20.0,
+     "success": false,
+     "video": "media/videos/deposit_coin/05.mp4",
+     "poster": "media/posters/deposit_coin/05.jpg"
+    }
+   ],
+   "successes": 3,
+   "cover": "media/posters/deposit_coin/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "fasten_screws",
+   "base": "fasten_screws",
+   "random": false,
+   "name": "拧紧螺丝",
+   "name_en": "fasten_screws",
+   "dimension": "Precision",
+   "category": "insert",
+   "description": "按颜色把三颗螺丝与对应螺母配对，插入并拧紧，必要时双臂交接。",
+   "description_en": "There are three screws and three nuts on the table. The screws and nuts come from five possible colors: red, blue, gray, yellow, and purple. In each episode, three different colors are selected, and the robot needs to match each screw with the nut of the same color, insert it, and tighten it. The screw positions vary within a small range, while the nut positions vary within a larger range. If a handover is needed, the robot can first place the screw in the middle and then let the other arm pick it up and fasten it.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fasten_screws/01.mp4",
+     "poster": "media/posters/fasten_screws/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fasten_screws/02.mp4",
+     "poster": "media/posters/fasten_screws/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fasten_screws/03.mp4",
+     "poster": "media/posters/fasten_screws/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fasten_screws/04.mp4",
+     "poster": "media/posters/fasten_screws/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fasten_screws/05.mp4",
+     "poster": "media/posters/fasten_screws/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/fasten_screws/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "insert_key",
+   "base": "insert_key",
+   "random": false,
+   "name": "插钥匙",
+   "name_en": "insert_key",
+   "dimension": "Precision",
+   "category": "insert",
+   "description": "拿起钥匙，经双臂交接调整姿态后插入锁孔并转动。",
+   "description_en": "There is a key and a keyhole on the table. The robot needs to pick up the key, hand it over to the other hand for pose adjustment, insert it accurately into the keyhole, and then turn it.",
+   "score": 15.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 15.0,
+     "success": false,
+     "video": "media/videos/insert_key/01.mp4",
+     "poster": "media/posters/insert_key/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 15.0,
+     "success": false,
+     "video": "media/videos/insert_key/02.mp4",
+     "poster": "media/posters/insert_key/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 15.0,
+     "success": false,
+     "video": "media/videos/insert_key/03.mp4",
+     "poster": "media/posters/insert_key/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 15.0,
+     "success": false,
+     "video": "media/videos/insert_key/04.mp4",
+     "poster": "media/posters/insert_key/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 15.0,
+     "success": false,
+     "video": "media/videos/insert_key/05.mp4",
+     "poster": "media/posters/insert_key/05.jpg"
+    }
+   ],
+   "successes": 0,
+   "cover": "media/posters/insert_key/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "insert_tubes",
+   "base": "insert_tubes",
+   "random": false,
+   "name": "插试管",
+   "name_en": "insert_tubes",
+   "dimension": "Precision",
+   "category": "insert",
+   "description": "依次拿起三支试管并全部插入试管架。",
+   "description_en": "There is a tube rack and three tubes. The robot needs to pick up each tube in sequence and insert all tubes into the rack.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/insert_tubes/01.mp4",
+     "poster": "media/posters/insert_tubes/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/insert_tubes/02.mp4",
+     "poster": "media/posters/insert_tubes/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/insert_tubes/03.mp4",
+     "poster": "media/posters/insert_tubes/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/insert_tubes/04.mp4",
+     "poster": "media/posters/insert_tubes/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/insert_tubes/05.mp4",
+     "poster": "media/posters/insert_tubes/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/insert_tubes/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "play_Xylophone",
+   "base": "play_Xylophone",
+   "random": false,
+   "name": "敲木琴",
+   "name_en": "play_Xylophone",
+   "dimension": "Precision",
+   "category": "articulated",
+   "description": "单手拿起琴槌，从左到右依次敲击所有琴键。",
+   "description_en": "There is a xylophone and a mallet. The robot needs to pick up the mallet with one hand and strike all the xylophone keys from left to right.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/play_Xylophone/01.mp4",
+     "poster": "media/posters/play_Xylophone/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/play_Xylophone/02.mp4",
+     "poster": "media/posters/play_Xylophone/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/play_Xylophone/03.mp4",
+     "poster": "media/posters/play_Xylophone/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/play_Xylophone/04.mp4",
+     "poster": "media/posters/play_Xylophone/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/play_Xylophone/05.mp4",
+     "poster": "media/posters/play_Xylophone/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/play_Xylophone/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "plug_in_charger",
+   "base": "plug_in_charger",
+   "random": false,
+   "name": "插充电器",
+   "name_en": "plug_in_charger",
+   "dimension": "Precision",
+   "category": "insert",
+   "description": "拿起充电插头并插入插线板。",
+   "description_en": "There is a charger plug and a power strip. The robot needs to pick up the charger plug and insert it into the power strip.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/plug_in_charger/01.mp4",
+     "poster": "media/posters/plug_in_charger/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/plug_in_charger/02.mp4",
+     "poster": "media/posters/plug_in_charger/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/plug_in_charger/03.mp4",
+     "poster": "media/posters/plug_in_charger/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/plug_in_charger/04.mp4",
+     "poster": "media/posters/plug_in_charger/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/plug_in_charger/05.mp4",
+     "poster": "media/posters/plug_in_charger/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/plug_in_charger/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "pour_balls_into_vase",
+   "base": "pour_balls_into_vase",
+   "random": false,
+   "name": "倒小球入瓶",
+   "name_en": "pour_balls_into_vase",
+   "dimension": "Precision",
+   "category": "pour",
+   "description": "拿起装满小球的杯子，把小球全部倒入花瓶。",
+   "description_en": "There is a cup containing many small balls and a vase. The robot needs to pick up the cup and pour all the balls into the vase.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_balls_into_vase/01.mp4",
+     "poster": "media/posters/pour_balls_into_vase/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_balls_into_vase/02.mp4",
+     "poster": "media/posters/pour_balls_into_vase/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_balls_into_vase/03.mp4",
+     "poster": "media/posters/pour_balls_into_vase/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_balls_into_vase/04.mp4",
+     "poster": "media/posters/pour_balls_into_vase/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_balls_into_vase/05.mp4",
+     "poster": "media/posters/pour_balls_into_vase/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/pour_balls_into_vase/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "classify_objects",
+   "base": "classify_objects",
+   "random": false,
+   "name": "物品分类",
+   "name_en": "classify_objects",
+   "dimension": "Long-Horizon",
+   "category": "rigid",
+   "description": "把三类物品按类别分别放入三个篮子。",
+   "description_en": "There are three categories of objects and three baskets. The robot needs to group the objects by category and place each category into a separate basket. Any basket can be used for any category, as long as objects of the same category are placed together.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/classify_objects/01.mp4",
+     "poster": "media/posters/classify_objects/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/classify_objects/02.mp4",
+     "poster": "media/posters/classify_objects/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/classify_objects/03.mp4",
+     "poster": "media/posters/classify_objects/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/classify_objects/04.mp4",
+     "poster": "media/posters/classify_objects/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/classify_objects/05.mp4",
+     "poster": "media/posters/classify_objects/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/classify_objects/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "fill_egg_holder",
+   "base": "fill_egg_holder",
+   "random": false,
+   "name": "装填蛋托",
+   "name_en": "fill_egg_holder",
+   "dimension": "Long-Horizon",
+   "category": "rigid",
+   "description": "从篮子中逐个取出四枚鸡蛋放入蛋托，最后合上盖子。",
+   "description_en": "There is a woven basket containing four eggs and an egg holder. The robot needs to pick up the eggs one by one, place all four into the egg holder, and then close the lid.",
+   "score": 28.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 10.0,
+     "success": false,
+     "video": "media/videos/fill_egg_holder/01.mp4",
+     "poster": "media/posters/fill_egg_holder/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 0.0,
+     "success": false,
+     "video": "media/videos/fill_egg_holder/02.mp4",
+     "poster": "media/posters/fill_egg_holder/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 90.0,
+     "success": false,
+     "video": "media/videos/fill_egg_holder/03.mp4",
+     "poster": "media/posters/fill_egg_holder/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 40.0,
+     "success": false,
+     "video": "media/videos/fill_egg_holder/04.mp4",
+     "poster": "media/posters/fill_egg_holder/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 0.0,
+     "success": false,
+     "video": "media/videos/fill_egg_holder/05.mp4",
+     "poster": "media/posters/fill_egg_holder/05.jpg"
+    }
+   ],
+   "successes": 0,
+   "cover": "media/posters/fill_egg_holder/03.jpg",
+   "cover_episode": 3
+  },
+  {
+   "id": "fill_pen_holder",
+   "base": "fill_pen_holder",
+   "random": false,
+   "name": "装填笔筒",
+   "name_en": "fill_pen_holder",
+   "dimension": "Long-Horizon",
+   "category": "rigid",
+   "description": "一只手持笔筒，另一只手将笔逐支放入，最后把笔筒放回桌面。",
+   "description_en": "There is a pen holder and several pens. The robot needs to grasp the pen holder with one hand, use the other hand to place the pens into the holder one by one, and finally put the filled pen holder back on the table.",
+   "score": 85.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fill_pen_holder/01.mp4",
+     "poster": "media/posters/fill_pen_holder/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fill_pen_holder/02.mp4",
+     "poster": "media/posters/fill_pen_holder/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fill_pen_holder/03.mp4",
+     "poster": "media/posters/fill_pen_holder/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/fill_pen_holder/04.mp4",
+     "poster": "media/posters/fill_pen_holder/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 25.0,
+     "success": false,
+     "video": "media/videos/fill_pen_holder/05.mp4",
+     "poster": "media/posters/fill_pen_holder/05.jpg"
+    }
+   ],
+   "successes": 4,
+   "cover": "media/posters/fill_pen_holder/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "make_kong",
+   "base": "make_kong",
+   "random": false,
+   "name": "麻将杠牌",
+   "name_en": "make_kong",
+   "dimension": "Long-Horizon",
+   "category": "dynamic",
+   "description": "观察对手打出的牌，在己方找到匹配的牌并完成合法的杠。",
+   "description_en": "There is a Mahjong setup. The opponent first pushes out a tile. The robot needs to observe the discarded tile, identify the matching tiles on its side, and perform a valid kong action. The setup guarantees that a kong is possible.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/make_kong/01.mp4",
+     "poster": "media/posters/make_kong/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/make_kong/02.mp4",
+     "poster": "media/posters/make_kong/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/make_kong/03.mp4",
+     "poster": "media/posters/make_kong/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/make_kong/04.mp4",
+     "poster": "media/posters/make_kong/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/make_kong/05.mp4",
+     "poster": "media/posters/make_kong/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/make_kong/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "organize_table",
+   "base": "organize_table",
+   "random": false,
+   "name": "整理桌面",
+   "name_en": "organize_table",
+   "dimension": "Long-Horizon",
+   "category": "rigid",
+   "description": "鼠标放上鼠标垫、键盘推入框内、手办放上展台、闹钟放到抽屉顶，打开抽屉并收纳杂物。",
+   "description_en": "There are a computer, a keyboard, a mouse, an alarm clock, a cartoon figurine, three miscellaneous items, and a drawer. The robot needs to organize the table by placing the mouse on the mouse pad, pushing the keyboard into the frame, putting the figurine on the stand, placing the alarm clock on top of the drawer, opening the drawer, and putting all remaining miscellaneous items into it.",
+   "score": 80.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 75.0,
+     "success": false,
+     "video": "media/videos/organize_table/01.mp4",
+     "poster": "media/posters/organize_table/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 75.0,
+     "success": false,
+     "video": "media/videos/organize_table/02.mp4",
+     "poster": "media/posters/organize_table/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 75.0,
+     "success": false,
+     "video": "media/videos/organize_table/03.mp4",
+     "poster": "media/posters/organize_table/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/organize_table/04.mp4",
+     "poster": "media/posters/organize_table/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 75.0,
+     "success": false,
+     "video": "media/videos/organize_table/05.mp4",
+     "poster": "media/posters/organize_table/05.jpg"
+    }
+   ],
+   "successes": 1,
+   "cover": "media/posters/organize_table/04.jpg",
+   "cover_episode": 4
+  },
+  {
+   "id": "play_stacking_toy",
+   "base": "play_stacking_toy",
+   "random": false,
+   "name": "套圈玩具",
+   "name_en": "play_stacking_toy",
+   "dimension": "Long-Horizon",
+   "category": "insert",
+   "description": "将四类套件分别套到对应的四根立柱上。",
+   "description_en": "There is a stacking toy with four pegs and four types of pieces. The numbers of pieces in the four types are 4, 3, 2, and 1, and each peg matches one type. The robot needs to place all pieces onto their corresponding pegs correctly.",
+   "score": 92.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 60.0,
+     "success": false,
+     "video": "media/videos/play_stacking_toy/01.mp4",
+     "poster": "media/posters/play_stacking_toy/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/play_stacking_toy/02.mp4",
+     "poster": "media/posters/play_stacking_toy/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/play_stacking_toy/03.mp4",
+     "poster": "media/posters/play_stacking_toy/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/play_stacking_toy/04.mp4",
+     "poster": "media/posters/play_stacking_toy/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/play_stacking_toy/05.mp4",
+     "poster": "media/posters/play_stacking_toy/05.jpg"
+    }
+   ],
+   "successes": 4,
+   "cover": "media/posters/play_stacking_toy/02.jpg",
+   "cover_episode": 2
+  },
+  {
+   "id": "play_tic_tac_toe",
+   "base": "play_tic_tac_toe",
+   "random": false,
+   "name": "井字棋对弈",
+   "name_en": "play_tic_tac_toe",
+   "dimension": "Long-Horizon",
+   "category": "dynamic",
+   "description": "作为先手与随机策略对手轮流落子，直至棋盘下满。",
+   "description_en": "There is a 3-by-3 tic-tac-toe board. The robot plays as the first player, while the opponent follows a random strategy. The robot and the opponent take turns placing their marks until the board is filled.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/play_tic_tac_toe/01.mp4",
+     "poster": "media/posters/play_tic_tac_toe/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/play_tic_tac_toe/02.mp4",
+     "poster": "media/posters/play_tic_tac_toe/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/play_tic_tac_toe/03.mp4",
+     "poster": "media/posters/play_tic_tac_toe/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/play_tic_tac_toe/04.mp4",
+     "poster": "media/posters/play_tic_tac_toe/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/play_tic_tac_toe/05.mp4",
+     "poster": "media/posters/play_tic_tac_toe/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/play_tic_tac_toe/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "put_bottles_into_dustbin",
+   "base": "put_bottles_into_dustbin",
+   "random": false,
+   "name": "瓶子入垃圾桶",
+   "name_en": "put_bottles_into_dustbin",
+   "dimension": "Long-Horizon",
+   "category": "rigid",
+   "description": "拾起站立或倒伏的四个瓶子扔进垃圾桶，右侧瓶子需双臂交接。",
+   "description_en": "There are four bottles on the table, and they may be either standing or lying down. A dustbin is placed beside the table. The robot needs to pick up the bottles and throw them into the dustbin. Because of the shifted table layout, bottles on the right side require a handover between the two hands before being discarded.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/put_bottles_into_dustbin/01.mp4",
+     "poster": "media/posters/put_bottles_into_dustbin/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/put_bottles_into_dustbin/02.mp4",
+     "poster": "media/posters/put_bottles_into_dustbin/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/put_bottles_into_dustbin/03.mp4",
+     "poster": "media/posters/put_bottles_into_dustbin/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/put_bottles_into_dustbin/04.mp4",
+     "poster": "media/posters/put_bottles_into_dustbin/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/put_bottles_into_dustbin/05.mp4",
+     "poster": "media/posters/put_bottles_into_dustbin/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/put_bottles_into_dustbin/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "cover_blocks",
+   "base": "cover_blocks",
+   "random": false,
+   "name": "盖住并记忆积木",
+   "name_en": "cover_blocks",
+   "dimension": "Memory",
+   "category": "rigid",
+   "description": "依次盖住红绿蓝三块积木，记住每个盖子下的颜色，再按红、绿、蓝顺序揭开。",
+   "description_en": "There are three covers and three blocks arranged in a random order. The blocks are red, green, and blue. The robot needs to cover the blocks from left to right, remember the color under each cover, and then uncover the blocks in the order of red, green, and blue.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/cover_blocks/01.mp4",
+     "poster": "media/posters/cover_blocks/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/cover_blocks/02.mp4",
+     "poster": "media/posters/cover_blocks/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/cover_blocks/03.mp4",
+     "poster": "media/posters/cover_blocks/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/cover_blocks/04.mp4",
+     "poster": "media/posters/cover_blocks/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/cover_blocks/05.mp4",
+     "poster": "media/posters/cover_blocks/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/cover_blocks/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "imitate_sorting_sequence",
+   "base": "imitate_sorting_sequence",
+   "random": false,
+   "name": "模仿分拣顺序",
+   "name_en": "imitate_sorting_sequence",
+   "dimension": "Memory",
+   "category": "dynamic",
+   "description": "观察并记住对面机器人放入篮子的顺序，再按相同顺序放入对应物品。",
+   "description_en": "There are five categories of objects, with five objects on each side. The opposite robot places its objects into the basket on the right side in a certain order. The robot needs to observe and remember this sequence, then place its corresponding objects into the basket in the same order. This is a memory-based imitation task.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/imitate_sorting_sequence/01.mp4",
+     "poster": "media/posters/imitate_sorting_sequence/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/imitate_sorting_sequence/02.mp4",
+     "poster": "media/posters/imitate_sorting_sequence/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/imitate_sorting_sequence/03.mp4",
+     "poster": "media/posters/imitate_sorting_sequence/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/imitate_sorting_sequence/04.mp4",
+     "poster": "media/posters/imitate_sorting_sequence/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/imitate_sorting_sequence/05.mp4",
+     "poster": "media/posters/imitate_sorting_sequence/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/imitate_sorting_sequence/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "match_and_pick_from_conveyor",
+   "base": "match_and_pick_from_conveyor",
+   "random": false,
+   "name": "传送带记忆拾取",
+   "name_en": "match_and_pick_from_conveyor",
+   "dimension": "Memory",
+   "category": "dynamic",
+   "description": "记住传送带上先出现的物体，并在后续物体中拾取与之相同的一件。",
+   "description_en": "An object first appears on the conveyor and is carried away. The robot needs to remember this object, observe the following objects on the conveyor, and pick the one that matches the first object.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/match_and_pick_from_conveyor/01.mp4",
+     "poster": "media/posters/match_and_pick_from_conveyor/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/match_and_pick_from_conveyor/02.mp4",
+     "poster": "media/posters/match_and_pick_from_conveyor/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/match_and_pick_from_conveyor/03.mp4",
+     "poster": "media/posters/match_and_pick_from_conveyor/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/match_and_pick_from_conveyor/04.mp4",
+     "poster": "media/posters/match_and_pick_from_conveyor/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/match_and_pick_from_conveyor/05.mp4",
+     "poster": "media/posters/match_and_pick_from_conveyor/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/match_and_pick_from_conveyor/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "press_by_number",
+   "base": "press_by_number",
+   "random": false,
+   "name": "按数字按键",
+   "name_en": "press_by_number",
+   "dimension": "Memory",
+   "category": "articulated",
+   "description": "读取数字卡片，按对应次数按下红色按钮，再按蓝色确认键。",
+   "description_en": "There are two number cards, two red buttons, and one blue confirmation button. Read the left number card, press the left red button that many times, and then press the blue confirmation button once. Next, read the middle number card, press the middle red button that many times, and then press the same blue confirmation button once more. Do not finish both red buttons before pressing the blue button. Each press is one full down-and-up of the cap, and the two red buttons are counted separately.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/press_by_number/01.mp4",
+     "poster": "media/posters/press_by_number/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/press_by_number/02.mp4",
+     "poster": "media/posters/press_by_number/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/press_by_number/03.mp4",
+     "poster": "media/posters/press_by_number/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/press_by_number/04.mp4",
+     "poster": "media/posters/press_by_number/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/press_by_number/05.mp4",
+     "poster": "media/posters/press_by_number/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/press_by_number/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "swap_T",
+   "base": "swap_T",
+   "random": false,
+   "name": "交换 T 形块",
+   "name_en": "swap_T",
+   "dimension": "Memory",
+   "category": "rigid",
+   "description": "双手抓起两个 T 形块交换位置，并各自还原对方原有的位置与朝向。",
+   "description_en": "There are two T-shaped blocks on the table. The robot needs to grasp them with both hands, swap their positions, and place them back so that each block matches the original pose of the other one, including both position and orientation. This is a memory-based task.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/swap_T/01.mp4",
+     "poster": "media/posters/swap_T/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/swap_T/02.mp4",
+     "poster": "media/posters/swap_T/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/swap_T/03.mp4",
+     "poster": "media/posters/swap_T/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/swap_T/04.mp4",
+     "poster": "media/posters/swap_T/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/swap_T/05.mp4",
+     "poster": "media/posters/swap_T/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/swap_T/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "swap_blocks",
+   "base": "swap_blocks",
+   "random": false,
+   "name": "交换积木",
+   "name_en": "swap_blocks",
+   "dimension": "Memory",
+   "category": "rigid",
+   "description": "借助空垫子交换两块积木的位置，每次移动后按下按钮。",
+   "description_en": "There are three mats, two blocks placed on two of the mats, and one button. The robot needs to swap the positions of the two blocks by using the empty mat as a temporary place. After each move, the robot must press the button.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/swap_blocks/01.mp4",
+     "poster": "media/posters/swap_blocks/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/swap_blocks/02.mp4",
+     "poster": "media/posters/swap_blocks/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/swap_blocks/03.mp4",
+     "poster": "media/posters/swap_blocks/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/swap_blocks/04.mp4",
+     "poster": "media/posters/swap_blocks/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/swap_blocks/05.mp4",
+     "poster": "media/posters/swap_blocks/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/swap_blocks/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "align_blocks",
+   "base": "align_blocks",
+   "random": false,
+   "name": "三角尺对齐积木",
+   "name_en": "align_blocks",
+   "dimension": "Open",
+   "category": "push",
+   "description": "用三角尺推动三块积木，使其平行排成一条直线。",
+   "description_en": "There is a set square and three blocks. The robot needs to use the set square to push the blocks until they are aligned in parallel in a straight row.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/align_blocks/01.mp4",
+     "poster": "media/posters/align_blocks/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/align_blocks/02.mp4",
+     "poster": "media/posters/align_blocks/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/align_blocks/03.mp4",
+     "poster": "media/posters/align_blocks/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/align_blocks/04.mp4",
+     "poster": "media/posters/align_blocks/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/align_blocks/05.mp4",
+     "poster": "media/posters/align_blocks/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/align_blocks/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "classify_objects_by_language",
+   "base": "classify_objects_by_language",
+   "random": false,
+   "name": "按语言指令分类",
+   "name_en": "classify_objects_by_language",
+   "dimension": "Open",
+   "category": "rigid",
+   "description": "理解语言指令，识别未见过的物品类别，并放入指定篮子。",
+   "description_en": "There are three baskets and three categories of unseen objects. The robot needs to understand the language instruction, identify the category of each object, and place the objects into the specified baskets from left to right.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/classify_objects_by_language/01.mp4",
+     "poster": "media/posters/classify_objects_by_language/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/classify_objects_by_language/02.mp4",
+     "poster": "media/posters/classify_objects_by_language/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/classify_objects_by_language/03.mp4",
+     "poster": "media/posters/classify_objects_by_language/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/classify_objects_by_language/04.mp4",
+     "poster": "media/posters/classify_objects_by_language/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/classify_objects_by_language/05.mp4",
+     "poster": "media/posters/classify_objects_by_language/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/classify_objects_by_language/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "general_pickup",
+   "base": "general_pickup",
+   "random": false,
+   "name": "通用拾取",
+   "name_en": "general_pickup",
+   "dimension": "Open",
+   "category": "rigid",
+   "description": "理解语言指令，在多个物体中识别目标并拾起。",
+   "description_en": "There are multiple objects. The robot needs to understand the language instruction, identify the target object, and pick it up.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/general_pickup/01.mp4",
+     "poster": "media/posters/general_pickup/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/general_pickup/02.mp4",
+     "poster": "media/posters/general_pickup/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/general_pickup/03.mp4",
+     "poster": "media/posters/general_pickup/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/general_pickup/04.mp4",
+     "poster": "media/posters/general_pickup/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/general_pickup/05.mp4",
+     "poster": "media/posters/general_pickup/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/general_pickup/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "pick_from_conveyor_by_image",
+   "base": "pick_from_conveyor_by_image",
+   "random": false,
+   "name": "按图从传送带拾取",
+   "name_en": "pick_from_conveyor_by_image",
+   "dimension": "Open",
+   "category": "dynamic",
+   "description": "先提起篮子，根据展板上的图片在传送带上识别目标物体并放入篮中。",
+   "description_en": "There is a board displaying an image of the target object, a basket, and a conveyor carrying multiple objects. The robot needs to first lift the basket more than 8 cm, identify the target object on the conveyor based on the image shown on the board, pick up the target object, and place it into the basket.",
+   "score": 40.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pick_from_conveyor_by_image/01.mp4",
+     "poster": "media/posters/pick_from_conveyor_by_image/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pick_from_conveyor_by_image/02.mp4",
+     "poster": "media/posters/pick_from_conveyor_by_image/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 0.0,
+     "success": false,
+     "video": "media/videos/pick_from_conveyor_by_image/03.mp4",
+     "poster": "media/posters/pick_from_conveyor_by_image/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 0.0,
+     "success": false,
+     "video": "media/videos/pick_from_conveyor_by_image/04.mp4",
+     "poster": "media/posters/pick_from_conveyor_by_image/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 0.0,
+     "success": false,
+     "video": "media/videos/pick_from_conveyor_by_image/05.mp4",
+     "poster": "media/posters/pick_from_conveyor_by_image/05.jpg"
+    }
+   ],
+   "successes": 2,
+   "cover": "media/posters/pick_from_conveyor_by_image/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "pour_by_language",
+   "base": "pour_by_language",
+   "random": false,
+   "name": "按语言指令倒液体",
+   "name_en": "pour_by_language",
+   "dimension": "Open",
+   "category": "pour",
+   "description": "根据语言指令，将指定瓶子中的液体倒入对应颜色的碗中。",
+   "description_en": "There are three colored bottles and three colored bowls on the table. The robot needs to follow the language instruction and pour the liquid from each specified bottle into the corresponding specified bowl.",
+   "score": 90.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_by_language/01.mp4",
+     "poster": "media/posters/pour_by_language/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_by_language/02.mp4",
+     "poster": "media/posters/pour_by_language/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_by_language/03.mp4",
+     "poster": "media/posters/pour_by_language/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/pour_by_language/04.mp4",
+     "poster": "media/posters/pour_by_language/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 50.0,
+     "success": false,
+     "video": "media/videos/pour_by_language/05.mp4",
+     "poster": "media/posters/pour_by_language/05.jpg"
+    }
+   ],
+   "successes": 4,
+   "cover": "media/posters/pour_by_language/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "solve_equation",
+   "base": "solve_equation",
+   "random": false,
+   "name": "补全算式",
+   "name_en": "solve_equation",
+   "dimension": "Open",
+   "category": "rigid",
+   "description": "从散落的数字与运算符中选出缺失项，放到垫板上补全算式。",
+   "description_en": "There is an arithmetic equation on the table and a pad for the answer. The equation is missing either a number or an operator. The robot needs to choose the correct missing item from the randomly arranged numbers and operators on the table and place it on the pad to complete the equation.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/solve_equation/01.mp4",
+     "poster": "media/posters/solve_equation/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/solve_equation/02.mp4",
+     "poster": "media/posters/solve_equation/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/solve_equation/03.mp4",
+     "poster": "media/posters/solve_equation/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/solve_equation/04.mp4",
+     "poster": "media/posters/solve_equation/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/solve_equation/05.mp4",
+     "poster": "media/posters/solve_equation/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/solve_equation/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "stack_blocks_by_language",
+   "base": "stack_blocks_by_language",
+   "random": false,
+   "name": "按语言指令堆积木",
+   "name_en": "stack_blocks_by_language",
+   "dimension": "Open",
+   "category": "rigid",
+   "description": "理解语言指令，按指定颜色顺序堆叠积木。",
+   "description_en": "There are several colored blocks. The robot needs to understand the language instruction and stack the blocks in the specified color order.",
+   "score": 100.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_blocks_by_language/01.mp4",
+     "poster": "media/posters/stack_blocks_by_language/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_blocks_by_language/02.mp4",
+     "poster": "media/posters/stack_blocks_by_language/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_blocks_by_language/03.mp4",
+     "poster": "media/posters/stack_blocks_by_language/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_blocks_by_language/04.mp4",
+     "poster": "media/posters/stack_blocks_by_language/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 100.0,
+     "success": true,
+     "video": "media/videos/stack_blocks_by_language/05.mp4",
+     "poster": "media/posters/stack_blocks_by_language/05.jpg"
+    }
+   ],
+   "successes": 5,
+   "cover": "media/posters/stack_blocks_by_language/01.jpg",
+   "cover_episode": 1
+  },
+  {
+   "id": "store_tools_in_toolbox",
+   "base": "store_tools_in_toolbox",
+   "random": false,
+   "name": "工具入箱",
+   "name_en": "store_tools_in_toolbox",
+   "dimension": "Open",
+   "category": "insert",
+   "description": "拿起每件工具，放入工具箱中对应的槽位。",
+   "description_en": "There are several tools and a toolbox with designated slots. The robot needs to pick up each tool and place it into the corresponding position in the toolbox.",
+   "score": 20.0,
+   "episodes": [
+    {
+     "n": 1,
+     "score": 25.0,
+     "success": false,
+     "video": "media/videos/store_tools_in_toolbox/01.mp4",
+     "poster": "media/posters/store_tools_in_toolbox/01.jpg"
+    },
+    {
+     "n": 2,
+     "score": 0.0,
+     "success": false,
+     "video": "media/videos/store_tools_in_toolbox/02.mp4",
+     "poster": "media/posters/store_tools_in_toolbox/02.jpg"
+    },
+    {
+     "n": 3,
+     "score": 0.0,
+     "success": false,
+     "video": "media/videos/store_tools_in_toolbox/03.mp4",
+     "poster": "media/posters/store_tools_in_toolbox/03.jpg"
+    },
+    {
+     "n": 4,
+     "score": 50.0,
+     "success": false,
+     "video": "media/videos/store_tools_in_toolbox/04.mp4",
+     "poster": "media/posters/store_tools_in_toolbox/04.jpg"
+    },
+    {
+     "n": 5,
+     "score": 25.0,
+     "success": false,
+     "video": "media/videos/store_tools_in_toolbox/05.mp4",
+     "poster": "media/posters/store_tools_in_toolbox/05.jpg"
+    }
+   ],
+   "successes": 0,
+   "cover": "media/posters/store_tools_in_toolbox/04.jpg",
+   "cover_episode": 4
+  }
+ ]
+}

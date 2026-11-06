@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leaderboard · KnowinAgent-RoboDojo</title>
+  <meta name="title-en" content="Leaderboard · KnowinAgent-RoboDojo">
+  <meta name="title-zh" content="榜单 · KnowinAgent-RoboDojo">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/knowin.css">
+</head>
+<body>
+  <section class="phead">
+    <div class="shell">
+      <div class="eyebrow">RoboDojo · Simulation</div>
+      <h1><span lang="en">Leaderboard</span><span lang="zh">榜单</span></h1>
+      <p class="lead"><span lang="en">All simulation entries on the public RoboDojo leaderboard, scored with the official five-dimension formula. Generalization averages the standard and randomized layouts.</span><span lang="zh">RoboDojo 官网公开榜单的全部仿真方法，按官方五维公式计分；泛化为标准布局与随机布局的平均。</span></p>
+      <div class="figures" id="figures"></div>
+      <p class="evalnote" data-evalnote></p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:56px">
+    <div class="shell">
+      <div class="controls" style="margin-top:0">
+        <div class="seg" id="type"></div>
+        <div class="seg" id="metric"><button data-v="score" class="on">Score</button><button data-v="sr">SR</button></div>
+        <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="q" data-ph-en="Search methods or teams" data-ph-zh="搜索方法或团队" placeholder="Search methods or teams"></label>
+      </div>
+      <div class="tbl-wrap">
+        <table class="bt" id="tbl"><thead></thead><tbody></tbody></table>
+      </div>
+      <p class="cap" id="cap"></p>
+    </div>
+  </section>
+
+  <script src="assets/js/k.js"></script>
+  <script src="assets/js/p-leaderboard.js"></script>
+</body>
+</html>

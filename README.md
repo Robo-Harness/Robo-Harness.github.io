@@ -3,6 +3,7 @@
 Static project page for **Robo-Harness K1: Harnessing Robot-Use Agents via Perception Augmentation**.
 
 - Project page: `/k1/`.
+- KnowinAgent-RoboDojo showcase: `/KnowinAgent-RoboDojo/` (static export of the KnowinAgent-RoboDojo site, including 270 test-episode videos).
 - The root page redirects to `/k1/`.
 - Algorithm source: [Robo-Harness/k1](https://github.com/Robo-Harness/k1).
 

@@ -1,0 +1,168 @@
+{
+ "name": "KnowinAgent",
+ "version": "v1",
+ "benchmark": "RoboDojo",
+ "evaluated_on": "2026-11-04",
+ "score": 87.6,
+ "episodes": 270,
+ "variants": 54,
+ "base_tasks": 42,
+ "per_variant": 5,
+ "successes": 221,
+ "success_rate": 0.8185,
+ "full_score_variants": 39,
+ "videos": 270,
+ "dimensions": [
+  {
+   "id": "Generalization",
+   "label": "泛化",
+   "label_en": "Generalization",
+   "blurb": "不同物体、布局与随机变体下的通用操作",
+   "blurb_en": "Varied objects, layouts and randomized variants",
+   "variants": 24,
+   "score": 85.75,
+   "success_rate": 0.817
+  },
+  {
+   "id": "Precision",
+   "label": "精度",
+   "label_en": "Precision",
+   "blurb": "毫米级对准、插入与紧配合装配",
+   "blurb_en": "Millimetre alignment, insertion and tight-fit assembly",
+   "variants": 8,
+   "score": 85.38,
+   "success_rate": 0.825
+  },
+  {
+   "id": "Long-Horizon",
+   "label": "长程",
+   "label_en": "Long-Horizon",
+   "blurb": "多阶段、多物体的长序列任务",
+   "blurb_en": "Multi-stage, multi-object sequences",
+   "variants": 8,
+   "score": 85.62,
+   "success_rate": 0.725
+  },
+  {
+   "id": "Memory",
+   "label": "记忆",
+   "label_en": "Memory",
+   "blurb": "观察、记忆并复现场景信息",
+   "blurb_en": "Observing, remembering and reproducing scene state",
+   "variants": 6,
+   "score": 100.0,
+   "success_rate": 1.0
+  },
+  {
+   "id": "Open",
+   "label": "开放",
+   "label_en": "Open",
+   "blurb": "语言理解、视觉识别与开放式推理",
+   "blurb_en": "Language grounding, visual recognition and open-ended reasoning",
+   "variants": 8,
+   "score": 81.25,
+   "success_rate": 0.775
+  }
+ ],
+ "categories": [
+  {
+   "id": "pour",
+   "label": "倾倒（液体 / 颗粒）",
+   "label_en": "Pouring (liquid / granular)",
+   "variants": 4,
+   "tasks": 3,
+   "score": 97.5,
+   "success_rate": 0.95
+  },
+  {
+   "id": "push",
+   "label": "非抓取推移 / 清扫",
+   "label_en": "Non-prehensile pushing / sweeping",
+   "variants": 5,
+   "tasks": 3,
+   "score": 100.0,
+   "success_rate": 1.0
+  },
+  {
+   "id": "insert",
+   "label": "插入与紧配合装配",
+   "label_en": "Insertion & tight-fit assembly",
+   "variants": 11,
+   "tasks": 9,
+   "score": 75.0,
+   "success_rate": 0.673
+  },
+  {
+   "id": "dynamic",
+   "label": "动态场景（传送带 / 对弈）",
+   "label_en": "Dynamic scenes (conveyor / opponent)",
+   "variants": 5,
+   "tasks": 5,
+   "score": 88.0,
+   "success_rate": 0.88
+  },
+  {
+   "id": "deformable",
+   "label": "柔性体操作",
+   "label_en": "Deformable objects",
+   "variants": 2,
+   "tasks": 1,
+   "score": 100.0,
+   "success_rate": 1.0
+  },
+  {
+   "id": "rigid",
+   "label": "刚体抓放 / 堆叠 / 整理",
+   "label_en": "Rigid pick-place / stacking / tidying",
+   "variants": 23,
+   "tasks": 18,
+   "score": 90.8,
+   "success_rate": 0.852
+  },
+  {
+   "id": "articulated",
+   "label": "铰接 / 按压 / 敲击",
+   "label_en": "Articulated / pressing / striking",
+   "variants": 4,
+   "tasks": 3,
+   "score": 58.0,
+   "success_rate": 0.5
+  }
+ ],
+ "robot": "双臂 ARX-X5 · Isaac Sim",
+ "featured": [
+  {
+   "task": "fold_clothes",
+   "ep": 1
+  },
+  {
+   "task": "pour_liquid_into_cup",
+   "ep": 1
+  },
+  {
+   "task": "pour_balls_into_vase",
+   "ep": 5
+  },
+  {
+   "task": "fasten_screws",
+   "ep": 1
+  },
+  {
+   "task": "build_tower",
+   "ep": 3
+  },
+  {
+   "task": "play_Xylophone",
+   "ep": 1
+  },
+  {
+   "task": "make_toast",
+   "ep": 1
+  },
+  {
+   "task": "organize_table",
+   "ep": 4
+  }
+ ],
+ "aggregation": "五维等权；维度内任务变体等权；泛化维度标准与随机布局各占一半；每变体取 5 局均值。"
+}
