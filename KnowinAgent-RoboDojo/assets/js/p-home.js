@@ -10,8 +10,8 @@
   const fullWithin4 = Object.entries(R.full_score_by_training).filter(([k]) => +k <= 4).reduce((a, [, v]) => a + v, 0);
 
   $("lb-dim").innerHTML = DIMS.map(([k, en, zh]) => `<button data-v="${k}" class="${k === "average" ? "on" : ""}">${K.both(en, zh)}</button>`).join("");
-  K.seg($("lb-dim"), (v) => { state.dim = v; drawRank(); });
-  K.seg($("lb-metric"), (v) => { state.metric = v; drawRank(); });
+  K.seg($("lb-dim"), (v) => { state.dim = v; drawRank(); drawRadar(); });
+  K.seg($("lb-metric"), (v) => { state.metric = v; drawRank(); drawRadar(); });
   K.seg($("lb-scope"), (v) => { state.scope = v; drawRank(true); });
 
   const rowEls = new Map();
@@ -39,6 +39,54 @@
       requestAnimationFrame(() => (el.querySelector(".t i").style.width = `${Math.max(0, v)}%`));
     });
   }
+
+  const AXES = DIMS.slice(1);
+  const COLORS = ["#5f7a99", "#7f9c86", "#b08a8f", "#8e86ad", "#b7a06b", "#6f9a9c", "#9a948b"];
+  const others = O.compare.map((m, i) => ({ row: rows.find((r) => r.model === m), color: COLORS[i % COLORS.length] })).filter((x) => x.row);
+  const shown = new Set([...O.compare.slice(0, 3), "GPT-6-Astra"]);
+  let hot = null;
+
+  function drawRadar() {
+    const W = 500, H = 420, cx = W / 2, cy = 222, Rad = 150, n = AXES.length;
+    const ang = (i) => -Math.PI / 2 + (i * 2 * Math.PI) / n;
+    const at = (i, v) => [cx + Rad * (v / 100) * Math.cos(ang(i)), cy + Rad * (v / 100) * Math.sin(ang(i))];
+    const ring = (v) => AXES.map((_, i) => at(i, v).map((x) => x.toFixed(1)).join(",")).join(" ");
+    const val = (r, k) => Math.max(0, r[k]?.[state.metric] ?? 0);
+    const fmt = (v) => (state.metric === "sr" ? `${K.f1(v)}%` : K.f1(v));
+    const poly = (r, color, mine) => {
+      const pts = AXES.map(([k], i) => at(i, val(r, k)));
+      const tip = `${K.esc(r.model)} — ${AXES.map(([k, en, zh], i) => `${K.L(en, zh)} ${fmt(val(r, k))}`).join(" · ")}`;
+      return `<g class="poly${mine ? " me" : ""}${hot === r.model ? " hot" : ""}" data-m="${K.esc(r.model)}" style="transform-origin:${cx}px ${cy}px"><title>${tip}</title>
+        <polygon points="${pts.map((p) => p.map((x) => x.toFixed(1)).join(",")).join(" ")}" fill="${color}" fill-opacity="${mine ? 0.16 : 0.04}" stroke="${color}" stroke-width="${mine ? 2.4 : 1.5}" stroke-linejoin="round"/>
+        ${pts.map(([x, y]) => `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${mine ? 3.6 : 2.4}" fill="${mine ? "#fff" : color}" stroke="${color}" stroke-width="${mine ? 2 : 0}"/>`).join("")}</g>`;
+    };
+    const grid = [20, 40, 60, 80, 100].map((v) => `<polygon class="ring${v === 100 ? " outer" : " dash"}" points="${ring(v)}"/>`).join("")
+      + AXES.map(([k], i) => { const [x, y] = at(i, 100); return `<line class="spoke${state.dim === k ? " on" : ""}" x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/>`; }).join("")
+    const ticks = [20, 40, 60, 80, 100].map((v) => `<text class="tick" x="${cx + 4}" y="${(cy - Rad * v / 100 - 3).toFixed(1)}">${v}</text>`).join("");
+    const labels = AXES.map(([k, en, zh], i) => {
+      const [x, y] = at(i, 100 + 15), c = Math.cos(ang(i));
+      const anchor = Math.abs(c) < 0.2 ? "middle" : c > 0 ? "start" : "end";
+      const dy = Math.sin(ang(i)) < -0.5 ? -14 : Math.sin(ang(i)) > 0.5 ? 6 : -4;
+      return `<text class="ax${state.dim === k ? " on" : ""}" x="${x.toFixed(1)}" y="${(y + dy).toFixed(1)}" text-anchor="${anchor}">${K.L(en, zh)}</text>
+        <text class="axv" x="${x.toFixed(1)}" y="${(y + dy + 17).toFixed(1)}" text-anchor="${anchor}">${fmt(val(me, k))}</text>`;
+    }).join("");
+    const box = $("radar");
+    box.classList.toggle("hl", !!hot);
+    box.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${K.L("Five-dimension radar chart", "五维雷达图")}">${grid}
+      ${others.filter((o) => shown.has(o.row.model)).map((o) => poly(o.row, o.color, false)).join("")}${poly(me, "#8c6b45", true)}${ticks}${labels}</svg>`;
+
+    $("radar-legend").innerHTML = [`<button class="me" data-m="${K.esc(me.model)}"><i style="background:#8c6b45"></i>${K.esc(me.model)}</button>`,
+      ...others.map((o) => `<button class="${shown.has(o.row.model) ? "" : "off"}" data-m="${K.esc(o.row.model)}"><i style="background:${o.color}"></i>${K.esc(o.row.model)}</button>`)].join("");
+  }
+  $("radar-legend").addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b || b.classList.contains("me")) return;
+    const m = b.dataset.m; shown.has(m) ? shown.delete(m) : shown.add(m); drawRadar();
+  });
+  const setHot = (m) => { if (hot === m) return; hot = m; $("radar").classList.toggle("hl", !!m); $("radar").querySelectorAll(".poly").forEach((g) => g.classList.toggle("hot", g.dataset.m === m)); };
+  $("radar-legend").addEventListener("mouseover", (e) => { const b = e.target.closest("button"); setHot(b && (b.classList.contains("me") || shown.has(b.dataset.m)) ? b.dataset.m : null); });
+  $("radar-legend").addEventListener("mouseleave", () => setHot(null));
+  $("radar").addEventListener("mouseover", (e) => setHot(e.target.closest(".poly")?.dataset.m ?? null));
+  $("radar").addEventListener("mouseleave", () => setHot(null));
 
   function render() {
     $("figures").innerHTML = [
@@ -77,6 +125,7 @@
       }).join("") + "</tbody>";
 
     drawRank(true);
+    drawRadar();
   }
 
   const byId = Object.fromEntries(T.tasks.map((t) => [t.id, t]));

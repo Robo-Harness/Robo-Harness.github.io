@@ -122,6 +122,30 @@ figcaption b, .cap b { color: var(--ink); font-weight: 600; }
 .card .m span { font-size: 12.5px; color: var(--muted); line-height: 1.4; }
 
 
+/* leaderboard radar */
+.lb-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 56px; align-items: center; margin-top: 8px; }
+.radar-card { margin: 0; }
+.radar svg { display: block; width: 100%; height: auto; overflow: visible; }
+.radar .ring { fill: none; stroke: #e3dfd6; stroke-width: 1; }
+.radar .ring.dash { stroke-dasharray: 2 4; }
+.radar .ring.outer { stroke: #cfcac0; }
+.radar .spoke { stroke: #e3dfd6; stroke-width: 1; }
+.radar .spoke.on { stroke: var(--accent-2); stroke-width: 1.5; }
+.radar .tick { font-size: 10px; fill: var(--quiet); font-variant-numeric: tabular-nums; paint-order: stroke; stroke: var(--page); stroke-width: 3px; stroke-linejoin: round; }
+.radar .ax { font-size: 14px; font-weight: 620; fill: var(--ink); letter-spacing: -.01em; }
+.radar .ax.on { fill: var(--accent); }
+.radar .axv { font-size: 12.5px; font-weight: 600; fill: var(--accent); font-variant-numeric: tabular-nums; }
+.radar .poly { transition: opacity .25s; animation: radar-in 1s var(--ease) both; cursor: default; }
+.radar .poly.me { animation-delay: .1s; }
+.radar.hl .poly:not(.hot) { opacity: .15; }
+@keyframes radar-in { from { opacity: 0; transform: scale(.35); } to { opacity: 1; transform: none; } }
+.radar-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 8px; margin-top: 10px; }
+.radar-legend button { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--rule); background: #fff; border-radius: 999px; padding: 4px 11px; font: 12.5px var(--sans); color: var(--body); cursor: pointer; transition: color .2s, background .2s, border-color .2s; }
+.radar-legend button i { width: 14px; height: 3px; border-radius: 2px; transition: opacity .2s; }
+.radar-legend button.off { color: var(--quiet); background: transparent; border-style: dashed; }
+.radar-legend button.off i { opacity: .3; }
+.radar-legend button.me { color: var(--ink); font-weight: 650; cursor: default; }
+.radar-card .cap { text-align: center; margin-top: 12px; }
 /* innovation matrix */
 .matrix { margin-top: 40px; border-top: 1px solid var(--ink); }
 .mx-row { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr) minmax(0, 320px); gap: 0 40px; align-items: baseline; padding: 22px 0; border-bottom: 1px solid var(--rule); }
@@ -323,6 +347,7 @@ tr.me .cellbar i { background: var(--accent); }
   .grid3 { grid-template-columns: 1fr 1fr; }
   .tiles { grid-template-columns: repeat(2, 1fr); }
   .tasklist { position: static; max-height: 360px; }
+  .lb-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .mx-row { grid-template-columns: minmax(0, 1fr); gap: 6px; }
   .paper { grid-template-columns: minmax(0, 1fr); }
   .paper-head .inner { margin-left: 0; }

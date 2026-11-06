@@ -54,7 +54,14 @@
         <div class="seg" id="lb-metric"><button data-v="score" class="on">Score</button><button data-v="sr">SR</button></div>
         <div class="seg" id="lb-scope"><button data-v="sel" class="on"><span lang="en">Selected</span><span lang="zh">代表方法</span></button><button data-v="top"><span lang="en">Top 15</span><span lang="zh">前 15 名</span></button></div>
       </div>
-      <div class="rank" id="rank"></div>
+      <div class="lb-grid">
+        <figure class="radar-card">
+          <div class="radar" id="radar"></div>
+          <div class="radar-legend" id="radar-legend"></div>
+          <figcaption class="cap"><span lang="en"><b>Five-dimension profile.</b> Click a method to show or hide it.</span><span lang="zh"><b>五维能力分布。</b>点击方法名可显示或隐藏。</span></figcaption>
+        </figure>
+        <div class="rank" id="rank"></div>
+      </div>
       <p class="evalnote"><span lang="en">KnowinAgent-RoboDojo: 5 test episodes per variant. Other methods: official RoboDojo leaderboard, 25–50 episodes per task.</span><span lang="zh">KnowinAgent-RoboDojo：每个变体 5 局测试；其他方法：RoboDojo 官网榜单，每个任务 25–50 局。</span></p>
       <a class="more" href="leaderboard.html"><span lang="en">Full leaderboard</span><span lang="zh">查看完整榜单</span> →</a>
     </div>
