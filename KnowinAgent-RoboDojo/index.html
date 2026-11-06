@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KnowinAgent-RoboDojo: An Evolvable, Costless, and General Embodied Agent Framework for Complex Bimanual Tasks</title>
-  <meta name="title-en" content="KnowinAgent-RoboDojo: An Evolvable, Costless, and General Embodied Agent Framework for Complex Bimanual Tasks">
-  <meta name="title-zh" content="KnowinAgent-RoboDojo：面向复杂双臂任务的可进化、零成本、通用具身智能体框架">
-  <meta name="description" content="KnowinAgent-RoboDojo reaches 87.60 on the RoboDojo simulation benchmark, mastering most tasks within two training episodes.">
+  <title>KnowinAgent-RoboDojo: An Evolvable, Cost-Efficient, and General Embodied Agent Framework for Complex Bimanual Tasks</title>
+  <meta name="title-en" content="KnowinAgent-RoboDojo: An Evolvable, Cost-Efficient, and General Embodied Agent Framework for Complex Bimanual Tasks">
+  <meta name="title-zh" content="KnowinAgent-RoboDojo：面向复杂双臂任务的可进化、低成本、通用具身智能体框架">
+  <meta name="description" content="KnowinAgent-RoboDojo reaches 87.60 on the RoboDojo simulation benchmark, mastering most tasks within two evolving episodes.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/knowin.css">
 </head>
@@ -15,7 +15,7 @@
     <div class="shell">
       <div class="kicker">RoboDojo · Bimanual Manipulation</div>
       <h1>Knowin<b>Agent</b><wbr><span class="rd">-RoboDojo</span></h1>
-      <p class="tag"><span lang="en">An evolvable, costless, and general embodied agent framework for complex bimanual tasks</span><span lang="zh">面向复杂双臂任务的可进化、零成本、通用具身智能体框架</span></p>
+      <p class="tag"><span lang="en">An evolvable, cost-efficient, and general embodied agent framework for complex bimanual tasks</span><span lang="zh">面向复杂双臂任务的可进化、低成本、通用具身智能体框架</span></p>
       <div class="by"><b>Knowin</b> · <span lang="en">Technical Report · November 2026</span><span lang="zh">技术报告 · 2026 年 11 月</span></div>
       <div class="buttons">
         <a class="btn dark" href="showcase.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg><span lang="en">Rollouts</span><span lang="zh">测试录像</span></a>
@@ -36,9 +36,9 @@
       <div class="eyebrow"><span lang="en">Abstract</span><span lang="zh">摘要</span></div>
       <h2><span lang="en">Reasoning that lands in the physical world</span><span lang="zh">让推理稳定落到物理世界</span></h2>
       <p lang="en">Language models can write programs that drive robots, yet the same model can score several times higher or lower depending on the system built around it. KnowinAgent-RoboDojo treats that system as the object of design. The agent acts by submitting short programs; a trackable execution layer turns controller limits into planning constraints; budget governance is centred on native action steps and rejects premature completion; and an evidence-grounded evolution loop converts a few practice episodes into frozen, verifiable task knowledge.</p>
-      <p lang="en">Across all 54 task variants of the RoboDojo simulation benchmark, KnowinAgent-RoboDojo reaches <b>87.60</b>, the highest score under the official five-dimension formula. Most tasks are mastered with just <b>two training episodes</b>, and 11 of 12 randomized-layout variants are solved with no additional training.</p>
+      <p lang="en">Across all 54 task variants of the RoboDojo simulation benchmark, KnowinAgent-RoboDojo reaches <b>87.60</b>, the highest score under the official five-dimension formula. Most tasks are mastered with just <b>two evolving episodes</b>, and 11 of 12 randomized-layout variants are solved with no additional evolving.</p>
       <p lang="zh">语言模型已经能够编写程序驱动机器人，但同一个模型在不同系统之上的表现可以相差数倍。KnowinAgent-RoboDojo 把这套系统本身作为设计对象：智能体以短程序作为动作；可跟踪执行层把控制器的跟踪极限转化为规划约束；预算治理以原生动作步数为中心，并拦截过早的“完成”判断；证据化的进化闭环把少量练习回合沉淀为冻结、可校验的任务知识。</p>
-      <p lang="zh">在 RoboDojo 仿真基准全部 54 个任务变体上，KnowinAgent-RoboDojo 取得 <b>87.60</b> 分，为官方五维计分公式下的最高成绩。多数任务只需 <b>2 个训练回合</b>即可掌握，12 个随机布局变体中有 11 个无需任何额外训练。</p>
+      <p lang="zh">在 RoboDojo 仿真基准全部 54 个任务变体上，KnowinAgent-RoboDojo 取得 <b>87.60</b> 分，为官方五维计分公式下的最高成绩。多数任务只需 <b>2 个进化回合</b>即可掌握，12 个随机布局变体中有 11 个无需任何额外进化。</p>
     </div>
   </section>
 
@@ -70,21 +70,21 @@
   <section class="section" id="training">
     <div class="shell">
       <div class="reveal">
-        <div class="eyebrow"><span lang="en">Training</span><span lang="zh">训练</span></div>
-        <h2><span lang="en">Most tasks are mastered in two training episodes</span><span lang="zh">多数任务两个训练回合即可掌握</span></h2>
-        <p class="lead"><span lang="en">Each training episode is a practice run with score feedback; a review agent that never touches the simulator then distils the evidence into skills and lessons, which are frozen before testing. We count the training episodes behind every frozen knowledge version, following its full lineage.</span><span lang="zh">每个训练回合是一局带分数反馈的练习；之后由不接触仿真器的复盘智能体把证据提炼为技能与经验，冻结后再进入测试。我们沿完整的知识链路，统计每份冻结知识背后的训练回合数。</span></p>
+        <div class="eyebrow"><span lang="en">Evolving</span><span lang="zh">进化</span></div>
+        <h2><span lang="en">Most tasks are mastered in two evolving episodes</span><span lang="zh">多数任务两个进化回合即可掌握</span></h2>
+        <p class="lead"><span lang="en">Each evolving episode is a practice run with score feedback; a review agent that never touches the simulator then distils the evidence into skills and lessons, which are frozen before testing. We count the evolving episodes behind every frozen knowledge version, following its full lineage.</span><span lang="zh">每个进化回合是一局带分数反馈的练习；之后由不接触仿真器的复盘智能体把证据提炼为技能与经验，冻结后再进入测试。我们沿完整的知识链路，统计每份冻结知识背后的进化回合数。</span></p>
       </div>
       <div class="grid2" style="margin-top:44px">
         <div class="reveal">
           <div class="cols" id="cols"></div>
           <div class="cols-x" id="cols-x"></div>
           <div class="legend"><span><i style="background:var(--accent)"></i>100 in all five tests</span><span><i style="background:var(--gray)"></i>Other variants</span></div>
-          <p class="cap"><span lang="en"><b>Figure 1.</b> Task variants by the number of training episodes behind their frozen knowledge.</span><span lang="zh"><b>图 1</b>　按冻结知识背后的训练回合数统计任务变体。</span></p>
+          <p class="cap"><span lang="en"><b>Figure 1.</b> Task variants by the number of evolving episodes behind their frozen knowledge.</span><span lang="zh"><b>图 1</b>　按冻结知识背后的进化回合数统计任务变体。</span></p>
         </div>
         <div class="facts reveal" id="facts"></div>
       </div>
       <h3 style="margin:64px 0 4px;font-size:19px;letter-spacing:-.02em"><span lang="en">Returns beyond four episodes</span><span lang="zh">四个回合之后的收益</span></h3>
-      <p class="cap" style="margin-top:0"><span lang="en">Tasks whose lineage was tested both at ≤ 4 and at 6 training episodes. Values are test means.</span><span lang="zh">在 ≤ 4 和 6 个训练回合时都做过测试的任务。数值为测试均分。</span></p>
+      <p class="cap" style="margin-top:0"><span lang="en">Tasks whose lineage was tested both at ≤ 4 and at 6 evolving episodes. Values are test means.</span><span lang="zh">在 ≤ 4 和 6 个进化回合时都做过测试的任务。数值为测试均分。</span></p>
       <div class="tbl-wrap"><table class="bt" id="beyond"></table></div>
     </div>
   </section>
@@ -100,7 +100,7 @@
         <div class="mx-row reveal">
           <h3><span class="no">1</span><span lang="en">Embodied Experience Self-Evolution</span><span lang="zh">具身经验自进化</span></h3>
           <p><span lang="en">Distils transferable skills from interaction trajectories and constrains every knowledge update with execution evidence, achieving few-shot mastery and cross-layout generalization.</span><span lang="zh">从交互轨迹中归纳可迁移技能，以执行证据约束每一次知识更新，实现少样本掌握与跨布局泛化。</span></p>
-          <p class="o"><span lang="en">Median <b>2</b> training episodes · <b>11/12</b> random layouts reused</span><span lang="zh">训练回合中位数 <b>2</b> · <b>11/12</b> 随机布局直接复用</span></p>
+          <p class="o"><span lang="en">Median <b>2</b> evolving episodes · <b>11/12</b> random layouts reused</span><span lang="zh">进化回合中位数 <b>2</b> · <b>11/12</b> 随机布局直接复用</span></p>
         </div>
         <div class="mx-row reveal">
           <h3><span class="no">2</span><span lang="en">Active Perception with Metacognitive Decision-Making</span><span lang="zh">主动感知与元认知决策</span></h3>

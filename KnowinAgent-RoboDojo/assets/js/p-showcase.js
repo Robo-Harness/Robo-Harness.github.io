@@ -29,7 +29,7 @@
     $("d-avg").textContent = `${K.f2(t.score)} / ${K.f1(K.srOf(t))}%`;
     const tr = train[t.id];
     $("d-chips").innerHTML = [K.L(...K.dim(t.dimension)), K.L(T.categories_en[t.category], T.categories[t.category]), t.random ? K.L("Randomized layout", "随机布局") : null,
-      tr ? (tr.reuses_standard ? K.L("Reuses standard-layout knowledge", "复用标准布局知识") : K.L(`${tr.training} training episodes`, `${tr.training} 个训练回合`)) : null]
+      tr ? (tr.reuses_standard ? K.L("Reuses standard-layout knowledge", "复用标准布局知识") : K.L(`${tr.training} evolving episodes`, `${tr.training} 个进化回合`)) : null]
       .filter(Boolean).map((x) => `<span>${K.esc(x)}</span>`).join("");
     $("d-desc").textContent = K.L(t.description_en, t.description);
 

@@ -91,9 +91,9 @@
   function render() {
     $("figures").innerHTML = [
       [K.f2(me.average.score), K.L(`RoboDojo simulation score — #${me.rank} of ${rows.length} methods`, `RoboDojo 仿真综合得分，${rows.length} 个方法中第 ${me.rank}`)],
-      [`${R.median_training}`, K.L("median training episodes behind each task's knowledge", "每个任务知识背后的训练回合数（中位数）")],
+      [`${R.median_training}`, K.L("median evolving episodes behind each task's knowledge", "每个任务知识背后的进化回合数（中位数）")],
       [`${S.full_score_variants}<small>/ ${S.variants}</small>`, K.L("task variants at 100 in all five test episodes", "5 局测试全部满分的任务变体")],
-      [`${R.random_reuse}<small>/ ${R.random_variants}</small>`, K.L("randomized layouts solved with zero extra training", "随机布局变体无需额外训练")],
+      [`${R.random_reuse}<small>/ ${R.random_variants}</small>`, K.L("randomized layouts solved with zero extra evolving", "随机布局变体无需额外进化")],
     ].map(([v, k]) => `<div><div class="v">${v}</div><div class="k">${k}</div></div>`).join("");
 
     $("lb-lead").innerHTML = K.L(
@@ -111,10 +111,10 @@
     $("cols-x").innerHTML = budgets.map((b) => `<span>${b} ${b === 1 ? "episode" : "episodes"}</span>`).join("");
 
     $("facts").innerHTML = [
-      [`${R.median_training}`, K.L(`<b>Median training episodes</b> behind the ${R.knowledge_versions} frozen knowledge versions used at test time.`, `测试所用的 ${R.knowledge_versions} 份冻结知识，<b>训练回合数中位数</b>为 ${R.median_training}。`)],
-      [`${fullWithin4}<small>/${R.full_score_variants}</small>`, K.L(`Variants scoring 100 in every test episode that needed <b>four or fewer</b> training episodes; ${R.full_score_by_training[2] || 0} of them needed only two.`, `5 局全满分的变体中，<b>不超过 4 个训练回合</b>的占 ${fullWithin4} 个，其中 ${R.full_score_by_training[2] || 0} 个仅用 2 个回合。`)],
-      [`${R.within_four}<small>/${R.knowledge_versions}</small>`, K.L("Knowledge versions trained within the <b>four-episode budget</b>; only a handful of the hardest tasks went further.", `在 <b>4 个回合的训练上限</b>内完成的知识版本；只有少数最难的任务超过上限。`)],
-      [`${R.random_reuse}<small>/${R.random_variants}</small>`, K.L("Randomized-layout variants that reuse the standard-layout knowledge with <b>no additional training</b>.", `随机布局变体直接复用标准布局的知识，<b>无需额外训练</b>。`)],
+      [`${R.median_training}`, K.L(`<b>Median evolving episodes</b> behind the ${R.knowledge_versions} frozen knowledge versions used at test time.`, `测试所用的 ${R.knowledge_versions} 份冻结知识，<b>进化回合数中位数</b>为 ${R.median_training}。`)],
+      [`${fullWithin4}<small>/${R.full_score_variants}</small>`, K.L(`Variants scoring 100 in every test episode that needed <b>four or fewer</b> evolving episodes; ${R.full_score_by_training[2] || 0} of them needed only two.`, `5 局全满分的变体中，<b>不超过 4 个进化回合</b>的占 ${fullWithin4} 个，其中 ${R.full_score_by_training[2] || 0} 个仅用 2 个回合。`)],
+      [`${R.within_four}<small>/${R.knowledge_versions}</small>`, K.L("Knowledge versions evolved within the <b>four-episode budget</b>; only a handful of the hardest tasks went further.", `在 <b>4 个回合的进化上限</b>内完成的知识版本；只有少数最难的任务超过上限。`)],
+      [`${R.random_reuse}<small>/${R.random_variants}</small>`, K.L("Randomized-layout variants that reuse the standard-layout knowledge with <b>no additional evolving</b>.", `随机布局变体直接复用标准布局的知识，<b>无需额外进化</b>。`)],
     ].map(([v, p]) => `<div><div class="v">${v}</div><p>${p}</p></div>`).join("");
 
     $("beyond").innerHTML = `<thead><tr><th>${K.L("Task", "任务")}</th><th class="r">${K.L("≤ 4 episodes", "≤ 4 个回合")}</th><th class="r">${K.L("6 episodes", "6 个回合")}</th><th class="r">${K.L("Change", "变化")}</th></tr></thead><tbody>` +
