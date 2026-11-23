@@ -18,6 +18,7 @@
       <div class="nav-links">
         <a href="https://arxiv.org/abs/2609.29389">Paper <span aria-hidden="true">↗</span></a>
         <a href="#demos">Demos</a>
+        <a href="#real-robot">Real robot</a>
         <a href="#method">Method</a>
         <a href="#results">Results</a>
         <a href="https://github.com/Robo-Harness/k1">Code <span aria-hidden="true">↗</span></a>
@@ -48,7 +49,21 @@
     <section class="section demos-section" id="demos" aria-labelledby="demos-title">
       <div class="container">
         <div class="section-heading"><p class="eyebrow">In action</p><h2 id="demos-title">Successful demonstrations</h2></div>
-        <p class="section-intro">Gemini 3.7 Flash with Robo-Harness K1. Current-view perception overlays show what the agent observed, alongside its function calls.</p>
+        <p class="section-intro">Gemini with Robo-Harness K1, from physical manipulation to simulation. Current-view perception overlays show what the agent observed, alongside its function calls.</p>
+        <div class="real-robot-block" id="real-robot">
+          <div class="dataset-heading"><h3>Real-robot manipulation</h3><span>Physical Piper arm · Two external RGB-D cameras</span></div>
+          <figure class="video-card real-robot-demo">
+            <picture class="real-robot-preview">
+              <source media="(prefers-reduced-motion: reduce)" srcset="assets/videos/real-robot-can-into-bowl.jpg">
+              <img src="assets/images/real-robot-can-into-bowl.gif" width="960" height="600" loading="lazy" alt="Physical Piper arm placing a cola can upright inside a red bowl; task query, frame numbers, and tool results remain visible">
+            </picture>
+            <figcaption><span class="video-meta">Successful trial · 33 decisions</span><h4>Can into bowl</h4><p>Locate the can and bowl, approach and grasp the can, then place it inside the bowl and release. The GIF presents all recorded decision snapshots with current views and frame annotations.</p><button class="animation-toggle" type="button" aria-pressed="false">Pause animation</button></figcaption>
+          </figure>
+          <details class="full-video"><summary>Watch the full MP4 with playback controls</summary><video controls playsinline preload="none" poster="assets/videos/real-robot-can-into-bowl.jpg" aria-label="Full annotated real-robot can placement video"><source src="assets/videos/real-robot-can-into-bowl.mp4" type="video/mp4"><a href="assets/videos/real-robot-can-into-bowl.mp4">Download the real-robot video</a></video></details>
+          <p class="playback-note">Decision snapshots; API waiting time omitted. Outcomes are assessed by operator confirmation and image review. Both methods request Gemini 3.7 Flash and share the Piper control adapter.</p>
+          <div class="table-scroll"><table class="results-table"><caption>Three concluded trials per method and task</caption><thead><tr><th scope="col">Task</th><th scope="col">Clean baseline</th><th scope="col">K1</th></tr></thead><tbody><tr><th scope="row">Can into bowl</th><td>1/3 · 33.3%</td><td><strong>2/3 · 66.7%</strong></td></tr><tr><th scope="row">Bowl onto plate</th><td>0/3 · 0.0%</td><td><strong>3/3 · 100.0%</strong></td></tr><tr><th scope="row">Two-object sorting</th><td>0/3 · 0.0%</td><td><strong>3/3 · 100.0%</strong></td></tr><tr class="total-row"><th scope="row">Overall</th><td>1/9 · 11.1%</td><td><strong>8/9 · 88.9%</strong></td></tr></tbody></table></div>
+          <p class="details-link"><a href="https://github.com/Robo-Harness/k1/blob/main/docs/results.md#real-robot-manipulation">Real-robot scoring and execution settings ↗</a></p>
+        </div>
         <div class="dataset-heading"><h3>LIBERO-PRO</h3><span>Franka Panda</span></div>
         <div class="demo-grid">
           <figure class="video-card">
@@ -120,13 +135,21 @@
         <div class="section-heading"><p class="eyebrow">Experiments</p><h2 id="results-title">Results</h2></div>
         <article class="result-block">
           <h3>LIBERO-PRO</h3>
-          <p class="result-summary">On matched configurations, K1 augments GPT-6 Astra from <strong>61.1% to 88.9%</strong>, a gain of 27.8 percentage points. Gemini 3.7 Flash with K1 reaches <strong>77.8%</strong>, surpassing RGB-only Astra despite being a weaker model. This shows that perception tools and model capability are complementary: a weaker model equipped with K1 can outperform a stronger model without it, and K1 further lifts an already strong model.</p>
-          <figure class="paper-figure"><a href="assets/images/frontier-results.png" aria-label="Open LIBERO-Pro results at full resolution"><img src="assets/images/frontier-results.png" width="1728" height="660" loading="lazy" alt="LIBERO-Pro accuracy: K1 with GPT-6 Astra 88.9%, K1 with Gemini 3.7 Flash 77.8%, RGB-only GPT-6 Astra 61.1%, plus published reference results"></a><figcaption>The top three rows use matched task configurations. Hatched bars are published references with different evaluation protocols, not matched reruns.</figcaption></figure>
+          <p class="result-summary">On <strong>60 matched task–variant–state configurations</strong>, K1 raises Gemini 3.7 Flash from <strong>16.7% to 71.7%</strong> and GPT-6 Astra from <strong>63.3% to 93.3%</strong>. Gemini with K1 also surpasses RGB-only Astra. Both models gain most on Spatial: +70 percentage points for Gemini and +45 points for Astra.</p>
+          <figure class="paper-figure"><a href="assets/images/frontier-results.png?v=paired60" aria-label="Open LIBERO-Pro results at full resolution"><img src="assets/images/frontier-results.png?v=paired60" width="2160" height="900" loading="lazy" alt="Figure 1: Astra with K1 93.3%, Gemini with K1 71.7%, RGB-only Astra 63.3%, RGB-only Gemini 16.7%; each system uses 60 matched cases"></a><figcaption>Figure 1. Four matched systems: Spatial, Object, and Goal, ten tasks each, with swap and task variants at state 0. Hatched bars show published references with their own evaluation protocols. The comparison evaluates the complete K1 interface, including perception, memory, motion tools, and completion feedback.</figcaption></figure>
+          <div class="table-scroll"><table class="results-table"><caption>Matched LIBERO-PRO comparison · 60 cases per system</caption><thead><tr><th scope="col">Model</th><th scope="col">RGB-only</th><th scope="col">K1</th><th scope="col">Gain</th></tr></thead><tbody><tr><th scope="row">Gemini 3.7 Flash</th><td>10/60 · 16.7%</td><td><strong>43/60 · 71.7%</strong></td><td>+55.0 pp</td></tr><tr><th scope="row">GPT-6 Astra</th><td>38/60 · 63.3%</td><td><strong>56/60 · 93.3%</strong></td><td>+30.0 pp</td></tr></tbody></table></div>
+          <p class="result-note">The full Gemini + K1 sweep spans three initial states and achieves <strong>139/180 (77.2%)</strong>; it includes the 60 paired cases above.</p>
         </article>
         <article class="result-block">
           <h3>Agentic Post-Training</h3>
-          <p class="result-summary">At epoch 5, Qwen3.5-9B with K1 reaches <strong>51.2%</strong> on training-matched configurations (A), <strong>44.2%</strong> on new initial states (B), and <strong>13.9%</strong> on held-out task conditions (C), versus OpenVLA's 20.9%, 30.2%, and 0.0% respectively. K1 RUA is the only method to succeed on held-out tasks where every VLA baseline scores 0.0%.</p>
-          <figure class="paper-figure"><a href="assets/images/learning-curves.png" aria-label="Open learning curves at full resolution"><img src="assets/images/learning-curves.png" width="1117" height="452" loading="lazy" alt="Learning curves comparing Qwen with K1, RGB-only Qwen, OpenVLA, pi0.5, and Qwen VLA"></a><figcaption>All methods share the same 107 source episodes. B evaluates new initial states of seen conditions; C holds out entire task conditions from fine-tuning. Generalization on B and C does not degrade significantly despite the limited training data. Further scaling of demonstration diversity is a natural next step.</figcaption></figure>
+          <p class="result-summary">Before fine-tuning, Qwen3.5-9B with K1 scores <strong>0% on A, B, and C</strong>. Training on 107 teacher episodes develops effective tool-use behavior: at epoch 5 it reaches <strong>51.2%</strong> on training-matched configurations (A), <strong>44.2%</strong> on new initial states (B), and <strong>13.9%</strong> on held-out task conditions (C), versus OpenVLA's 20.9%, 30.2%, and 0.0% respectively.</p>
+          <figure class="paper-figure"><a href="assets/images/learning-curves.png?v=epoch0" aria-label="Open learning curves at full resolution"><img src="assets/images/learning-curves.png?v=epoch0" width="1096" height="451" loading="lazy" alt="Learning curves including Qwen K1 RUA's zero-success untrained checkpoint and its epoch 1, 3, and 5 results, compared with action-policy baselines"></a><figcaption>All methods share the same 107 source episodes. A and B each contain 43 cases; C contains 36. B evaluates new initial states of seen conditions; C holds out entire task conditions from fine-tuning.</figcaption></figure>
+        </article>
+        <article class="result-block">
+          <h3>Learning across environments</h3>
+          <p class="result-summary">Continuing the LIBERO-trained agent on <strong>316 successful trajectories</strong> from LIBERO-PRO, RoboSuite, RoboCasa, and RoboTwin improves generalization in its original domain and performance on RoboSuite. The model retains the same tool-call prediction objective.</p>
+          <div class="table-scroll"><table class="results-table"><caption>Mixed-environment post-training · separate before/after evaluation</caption><thead><tr><th scope="col">Evaluation</th><th scope="col">Before</th><th scope="col">After</th></tr></thead><tbody><tr><th scope="row">LIBERO-PRO B · New initial states</th><td>18/42 · 42.9%</td><td><strong>22/42 · 52.4%</strong></td></tr><tr><th scope="row">LIBERO-PRO C · Held-out conditions</th><td>4/36 · 11.1%</td><td><strong>10/36 · 27.8%</strong></td></tr><tr><th scope="row">RoboSuite</th><td>17/60 · 28.3%</td><td><strong>30/60 · 50.0%</strong></td></tr><tr><th scope="row">RoboCasa</th><td>4/48 · 8.3%</td><td>2/48 · 4.2%</td></tr><tr><th scope="row">RoboTwin</th><td>1/39 · 2.6%</td><td>1/40 · 2.5%</td></tr></tbody></table></div>
+          <p class="result-note">Three additional LoRA epochs from the LIBERO epoch-3 checkpoint. Before-training scores come from a fresh evaluation. Source-domain generalization improves while RoboCasa and RoboTwin remain challenging.</p>
         </article>
         <article class="result-block transfer-result">
           <h3>RoboSuite Transfer</h3>
@@ -137,6 +160,12 @@
             <p><strong>86.2<span>%</span></strong><span>IIWA</span></p>
           </div>
           <p class="result-interpretation">The small spread across arms supports separating decisions from actuation: the agent reasons about measured geometry, while embodiment-specific adapters control each arm. All arms use PandaGripper to isolate changes in arm kinematics. The broader Panda evaluation includes wiping and two-arm tasks, reaching <strong>72.1%</strong> overall. Two-arm lifting reaches 75.0%, while handover reaches only 5.0%, exposing coordination limits beyond geometric target-reaching.</p>
+        </article>
+        <article class="result-block">
+          <h3>RoboTwin and RoboCasa Transfer</h3>
+          <p class="result-summary">The same tool interface extends to <strong>Aloha AgileX dual arms in RoboTwin</strong> and <strong>PandaOmron mobile manipulation in RoboCasa</strong>, using Gemini without target-environment model fine-tuning.</p>
+          <div class="table-scroll"><table class="results-table"><caption>Transfer to bimanual and mobile manipulation</caption><thead><tr><th scope="col">Environment</th><th scope="col">Setting</th><th scope="col">Success</th></tr></thead><tbody><tr><th scope="row">RoboTwin Easy</th><td>10 tasks · task-macro average</td><td><strong>32.0%</strong></td></tr><tr><th scope="row">RoboTwin Hard</th><td>Same tasks · randomized conditions</td><td><strong>28.0%</strong></td></tr><tr><th scope="row">RoboCasa</th><td>24 kitchen tasks × 10 initial states</td><td><strong>53/240 · 22.1%</strong></td></tr></tbody></table></div>
+          <p class="result-interpretation">RoboTwin Hard varies lighting, textures, clutter, and table height; K1's task-macro success drops by 4 points. RoboCasa adds base translation, base rotation, and torso-height control. Counter-to-sink placement reaches 80%, while microwave activation and coffee-machine button pressing remain unsolved.</p>
         </article>
         <p class="details-link"><a href="https://github.com/Robo-Harness/k1/blob/main/docs/results.md">Evaluation protocols and detailed results <span aria-hidden="true">↗</span></a></p>
       </div>
